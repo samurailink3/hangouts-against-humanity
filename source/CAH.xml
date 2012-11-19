@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="Hangouts Against Humanity">
+        <Require feature="rpc"/>
+        <Require feature="views"/>
+    </ModulePrefs>
+    <Content type="html">
+        <![CDATA[
+        <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.3"></script>
+
+        <!-- jQuery -->
+        <script src="//tabletopforge.com/CAH/js/jquery-1.7.2.min.js"></script>
+
+        <!-- ExtJS -->
+        <script src="//tabletopforge.com/CAH/js/ext-all-debug.js"></script>
+        <link rel="stylesheet" href="//tabletopforge.com/CAH/resources/css/ext-all-gray.css">
+
+        <!-- CAH -->
+        <link rel="stylesheet" href="//tabletopforge.com/CAH/css/CAH.css">
+        <script src="//tabletopforge.com/CAH/CAH.hangout.js"></script>
+        <script src="//tabletopforge.com/CAH/CAH.layout.js"></script>
+        <script src="//tabletopforge.com/CAH/CAH.js"></script>
+
+        <html>
+        <head>
+            <title>Hangouts Against Humanity</title>
+            <meta http-equiv="Content-Type" content="text/html;	charset = iso - 8859 - 1 "/>
+        </head>
+        <body>
+
+        </body>
+        </html>
+        ]]>
+    </Content>
+</Module>

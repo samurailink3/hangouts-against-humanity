@@ -1,0 +1,41 @@
+.card {
+    display: inline-block;
+    width: 11em;
+    height: 13em;
+    border: 1px solid #666;
+    border-radius: .3em;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+    -khtml-border-radius: .3em;
+    padding: .25em;
+    margin: 2em .5em .5em .5em;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    font-family:Helvetica;
+    position: relative;
+    -moz-box-shadow: .2em .2em .5em #333;
+    -webkit-box-shadow: .2em .2em .5em #333;
+    box-shadow: .2em .2em .5em #333;
+    float: left;
+}
+
+.whitecard {
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 5em;
+}
+
+.blackcard {
+    color: #fff;
+    background-color: #000;
+}
+
+.whitecard:hover, .whitecard:active, .whitecard:focus {
+    bottom: 3em;
+}
+
+.cardtext {
+    padding-top: 1em;
+}
