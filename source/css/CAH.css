@@ -39,3 +39,57 @@
 .cardtext {
     padding-top: 1em;
 }
+
+.cellPadding {
+    padding-top: 6px;
+}
+
+.cardSelected {
+    bottom: 3em;
+    border-color: red;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.firstCardSelected {
+    background-image: url(//tabletopforge.com/CAH/img/trans-1.jpg);
+}
+
+.secondCardSelected {
+    background-image: url(//tabletopforge.com/CAH/img/trans-2.jpg);
+}
+
+.thirdCardSelected {
+    background-image: url(//tabletopforge.com/CAH/img/trans-3.jpg);
+}
+
+.answerButton {
+    float: left;
+    clear: left;
+    margin-left: 3em;
+    margin-top: -3em;
+}
+
+.revealButton {
+    float: left;
+    clear: left;
+    margin-left: 3em;
+    margin-top: -3em;
+}
+
+.chooseAnswerButton {
+    float: left;
+    clear: left;
+    margin-left: 3em;
+    margin-top: -3em;
+}
+
+.revealedCard {
+    bottom: 3em;
+    border-color: blue;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(//tabletopforge.com/CAH/img/eye.png);
+}

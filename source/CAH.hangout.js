@@ -8,13 +8,15 @@ function initGoogleAPI()
     };
 
     gapi.hangout.data.onStateChanged.add(onStateChanged);
-    gapi.hangout.data.onMessageReceived.add(onMessageReceived);
 }
 
 //send event name and string version of JSON object to shared state
 function sendEvent(eventName, eventData) {
     var id = uniqid();
-    debug("Sent: " + eventName+"##"+id + ", " + JSON.stringify(eventData));
+    if (!eventData) {
+        eventData = new Object();
+        eventData.sender = user.id;
+    }
     gapi.hangout.data.setValue(eventName+"##"+id,JSON.stringify(eventData));
 }
 
@@ -23,6 +25,7 @@ function sendEvent(eventName, eventData) {
 function onStateChanged(event) {
     try {
         Ext.iterate(event.addedKeys, function (obj,index) {
+            //event function call
             if (obj.key.search("##")> 0) {
                 var eventData = JSON.parse(obj.value);
                 var id = obj.key.search("##");
@@ -41,14 +44,3 @@ function onStateChanged(event) {
     }
 }
 
-//send event name and string version of JSON object to shared state
-function sendMessage(message) {
-    gapi.hangout.data.sendMessage(JSON.stringify(message));
-}
-
-
-//Process received messages
-function onMessageReceived(message) {
-    var test = JSON.parse(message.message);
-    rollerTest.setAltDice(test.physics);
-}
