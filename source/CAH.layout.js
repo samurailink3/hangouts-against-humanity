@@ -13,7 +13,8 @@ function initLayout() {
                     xtype: 'panel',
                     height: 300,
                     split: true,         // enable resizing
-                    margins: '0 5 5 5'
+                    margins: '0 5 5 5',
+                    autoScroll: true
                 },{
                     // xtype: 'panel' implied by default
                     title: 'Game State',
@@ -48,11 +49,11 @@ function initLayout() {
                                 },
                                 {
                                     id:'turnCounter',
-                                    margin: '0 0 0 30',
+                                    margin: '0 0 0 25',
                                     xtype:'numberfield',
                                     fieldLabel:'Turn',
                                     labelWidth:40,
-                                    width:60,
+                                    width:80,
                                     value:0,
                                     readOnly: true
                                 },
@@ -62,6 +63,7 @@ function initLayout() {
                             xtype:'grid',
                             id:'playerGrid',
                             margin: '10 0 0 0',
+                            autoScroll: true,
                             store:Ext.data.StoreManager.lookup('playerStore'),
                             sortableColumns: false,
                             columns:[
@@ -81,7 +83,7 @@ function initLayout() {
                                 },
                                 { text:'Points', dataIndex:'points', width: 50, align: 'center', tdCls: 'cellPadding'}
                             ],
-                            viewConfig: {forceFit: true}
+                            viewConfig: {markDirty:false, forceFit: true}
                         }
                     ]
                 },{
@@ -90,7 +92,8 @@ function initLayout() {
                     region: 'center',     // center region is required, no width/height specified
                     xtype: 'panel',
                     layout: 'fit',
-                    margins: '5 5 0 0'
+                    margins: '5 5 0 0',
+                    autoScroll: true
                 }],
                 renderTo: Ext.getBody()
             });

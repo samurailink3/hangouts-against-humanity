@@ -4,15 +4,76 @@ reader = new Object();
 readerIndex = 0;
 numSubmissions = 0;
 numRevealedSubmissions = 0;
+winningPoints = 0;
+firstCardSelected = false;
+secondCardSelected = false;
+thirdCardSelected = false;
 
 function startGame() {
     //start game
-    //TODO: add check for more than 1 player
-    //TODO: window for choose options
-    var eventData = new Object();
-    eventData.gameStarter = user.name;
-    eventData.sender = user.id;
-    sendEvent('startedGame', eventData);
+    if (playerStore.count() < 3) {
+        gapi.hangout.layout.displayNotice("You need at least 3 people to play.");
+    }
+    else {
+        //present game options
+        optionsWindow = Ext.create('Ext.window.Window', {
+            title:'Game Options', id:'optionsWindow',
+            width:400,
+            height:200,
+            autoShow: true,
+            modal: true,
+            collapsible: false,
+            resizable: false,
+            items: [
+                {
+                    xtype: 'checkboxgroup',
+                    id: 'setGroup',
+                    fieldLabel: 'Sets',
+                    labelWidth: 35,
+                    // Arrange checkboxes into two columns, distributed vertically
+                    columns: 2,
+                    columnWidth:  120,
+                    vertical: true,
+                    items: [
+                        { boxLabel: 'Base', name: 'sets', inputValue: 'Base', checked: true, readOnly:true },
+                        { boxLabel: 'First Expansion', name: 'sets', inputValue: 'CAHe1'},
+                        { boxLabel: 'Second Expansion', name: 'sets', inputValue: 'CAHe2' }
+                    ]
+                },
+                {
+                    id:'winningPoints',
+                    xtype:'numberfield',
+                    fieldLabel:'Points',
+                    labelWidth:40,
+                    width:100,
+                    value:7,
+                    maxValue:20,
+                    minValue:1
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Start Game',
+                    handler: function () {
+                        var eventData = new Object();
+                        eventData.winningPoints = Ext.getCmp('winningPoints').getValue();
+                        eventData.sets = Ext.getCmp('setGroup').getValue();
+                        eventData.gameStarter = user.name;
+                        eventData.sender = user.id;
+                        sendEvent('startedGame', eventData);
+
+                        this.up('window').close();
+                    }
+                },
+                {
+                    text: 'Cancel',
+                    handler: function () {
+                        this.up('window').close();
+                    }
+                }
+            ]
+        });
+    }
 }
 
 function startedGame(eventData){
@@ -25,19 +86,27 @@ function startedGame(eventData){
     //number of players
     numPlayers = playerStore.count();
 
+    //winningPoints
+    winningPoints = eventData.winningPoints;
+    //TODO: hide start game button, put Goal
+
     //game is ongoing
     gameStarted = true;
+
+    //reposition video feed
+    resetVideoWindow();
+    pancakesOverlay.setVisible(false);
 
     //disable start game button
     Ext.getCmp('startGameButton').disable();
 
     //initialize decks
-    initDecks();
+    initDecks(eventData.sets);
 
     //person who started the game randomly chooses reader,sends out cards
     if (eventData.sender == user.id) {
         chooseRandomReader();
-        dealAnswers(10, true);
+        dealAnswers(10);
     }
 }
 ///////////////////////////////////////////////////////
@@ -48,6 +117,7 @@ function startedGame(eventData){
 function doReaderTurn() {
     if (reader.id == user.id) {
         numSubmissions = 0;
+        numRevealedSubmissions = 0;
 
         //disable hand for reader
         disableReaderHand();
@@ -93,12 +163,22 @@ function chooseRandomReader() {
     reader = playerStore.getAt(readerIndex).getData();
     var eventData = new Object();
     eventData.reader = reader;
+    eventData.readerIndex = readerIndex;
     sendEvent('setReader',eventData);
 
 }
 function setReader(eventData) {
     reader = eventData.reader;
-    gapi.hangout.layout.displayNotice(reader.name + " is the reader for this turn!");
+    readerIndex = eventData.readerIndex;
+    gapi.hangout.layout.displayNotice(reader.name + " is the Card Czar for this turn!");
+    var readerFeed = gapi.hangout.layout.createParticipantVideoFeed(reader.participantID);
+    videoCanvas.setVideoFeed(readerFeed);
+    readerVideoWindow.setTitle('Card Czar: ' + reader.name);
+    //reset card selection variables
+    firstCardSelected = false;
+    secondCardSelected = false;
+    thirdCardSelected = false;
+    //advance turn
     if (user.id == reader.id) {
         doReaderTurn();
     }
@@ -112,16 +192,18 @@ function enableReaderHand() {
     Ext.getCmp('handArea').expand();
 }
 
-function initDecks() {
+function initDecks(setsData) {
     //master questions store
     masterQuestionStore = Ext.create('Ext.data.Store', {
         storeId:'masterQuestionStore',
         fields:['id', 'text', 'numAnswers', 'cardType'],
         data: masterCards,
-        filters: [{
-            property: 'cardType',
-            value: /Q/
-        }]
+        filters: [
+            {
+                property: 'cardType',
+                value: /Q/
+            }
+        ]
     });
 
     //master answers store
@@ -129,10 +211,12 @@ function initDecks() {
         storeId:'masterAnswerStore',
         fields:['id', 'text', 'cardType'],
         data: masterCards,
-        filters: [{
-            property: 'cardType',
-            value: /A/
-        }]
+        filters: [
+            {
+                property: 'cardType',
+                value: /A/
+            }
+        ]
     });
 
     //remaining questions store aka deck
@@ -140,10 +224,12 @@ function initDecks() {
         storeId:'remainingQuestionStore',
         fields:['id', 'text', 'numAnswers', 'cardType'],
         data: masterCards,
-        filters: [{
-            property: 'cardType',
-            value: /Q/
-        }]
+        filters: [
+            {
+                property: 'cardType',
+                value: /Q/
+            }
+        ]
     });
 
     //remaining answers store aka deck
@@ -151,21 +237,42 @@ function initDecks() {
         storeId:'remainingAnswerStore',
         fields:['id', 'text', 'cardType'],
         data: masterCards,
-        filters: [{
-            property: 'cardType',
-            value: /A/
-        }]
+        filters: [
+            {
+                property: 'cardType',
+                value: /A/
+            }
+        ]
     });
+
+    if (setsData.sets == 'base') {
+        masterQuestionStore.filter('expansion','Base');
+        masterAnswerStore.filter('expansion','Base');
+        remainingQuestionStore.filter('expansion','Base');
+        remainingAnswerStore.filter('expansion','Base');
+    }
+    else {
+        //apply expansion filters
+        for (var i; i<setsData.sets.length; i++) {
+            masterQuestionStore.filter('expansion',setsData.sets[i]);
+            masterAnswerStore.filter('expansion',setsData.sets[i]);
+            remainingQuestionStore.filter('expansion',setsData.sets[i]);
+            remainingAnswerStore.filter('expansion',setsData.sets[i]);
+        }
+    }
 }
 
-function dealAnswers(numCards, initialDraw) {
+function dealAnswers(handSize) {
     //for each player
     playerStore.each(function(playerRec){
-        if (initialDraw || user.id != reader.id) {
+        //check number of cards and draw up to handsize
+       console.log("Cards requested to "+handSize);
+       console.log("Cards detected "+$('.myCardWrap').length);
+        var numCardsNeeded = handSize - $('.myCardWrap').length
+        if (numCardsNeeded > 0) {
             //pick numCards
             var pickedCards = new Array();
-            for (var i=1;i<=numCards;i++) {
-                var cardIndex = Math.ceil(remainingAnswerStore.count()*Math.random())-1;
+            for (var i=1;i<=numCardsNeeded;i++) { var cardIndex = Math.ceil(remainingAnswerStore.count()*Math.random())-1;
                 var cardRec = remainingAnswerStore.getAt(cardIndex);
                 pickedCards.push(cardRec.getData().id);
                 remainingAnswerStore.remove(cardRec);
@@ -186,12 +293,10 @@ function drawAnswers(eventData) {
 
         //add to your client if you drew them
         if (eventData.playerID == user.id) {
-            $('#handArea-body').append('<div id="'+cardRec.getData().id+'" class="whitecard card"><div class="cardtext">'+cardRec.getData().text+'</div></div>');
+            $('#handArea-body').append('<div class="myCardWrap" style="float:left;"><div id="'+cardRec.getData().id+'" class="whitecard card"><div class="cardtext">'+cardRec.getData().text+'</div></div></div>');
         }
-        else {
-            //remove cards from deck since dealer already removed
-            remainingAnswerStore.remove(cardRec);
-        }
+        //remove cards from deck since dealer already removed
+        remainingAnswerStore.remove(cardRec);
     }
 }
 
@@ -221,42 +326,71 @@ function drawQuestion(eventData) {
 
     //if question card draws 2, reader deals out 2 to each player
     if (user.id == reader.id && cardRec.getData().numAnswers == 3) {
-        dealAnswers(2);
+        dealAnswers(12);
     }
 }
 
 function allowSubmissions(eventData) {
     if (user.id != reader.id) {
         $('.whitecard').click(function() {
-            if (eventData.numAnswers == 1) {
+
+            if ($(this).hasClass('cardSelected')) {
+                //de-select
                 if ($(this).hasClass('firstCardSelected')) {
-                    //de-select
-                    $(this).removeClass('firstCardSelected cardSelected');
-                    $('#submitAnswerButton').remove();
+                    firstCardSelected = false;
                 }
-                else {
-                    //remove other selection
-                    $('.whitecard').removeClass('firstCardSelected cardSelected');
-                    $('#submitAnswerButton').remove();
-
-                    //add UI and button
+                if ($(this).hasClass('secondCardSelected')) {
+                    secondCardSelected = false;
+                }
+                if ($(this).hasClass('firstCardSelected')) {
+                    thirdCardSelected = false;
+                }
+                $(this).removeClass('firstCardSelected secondCardSelected thirdCardSelected cardSelected');
+                $('.answerButton').remove();
+            }
+            else {
+                //select card
+                if (!firstCardSelected) {
                     $(this).addClass('firstCardSelected cardSelected');
-                    $(this).wrap('<div class="submitWrap" style="float: left"></div>');
-                    $(this).parent().append('<button id="submitAnswerButton" class="answerButton" type="button">Submit!</button>');
-
-                    //event handler
-                    $('#submitAnswerButton').click(function() {
-                        var eventData = new Object();
-                        eventData.numAnswer = 1;
-                        eventData.answer = $(this).parent().children('div:first').attr('id');
-                        eventData.playerID = user.id;
-                        eventData.playerName = user.name;
-                        sendEvent("submitAnswers", eventData);
-
-                        //remove card
-                        removeCardsFromHand();
-                    });
+                    firstCardSelected = true;
                 }
+                else if (!secondCardSelected && eventData.numAnswers >= 2) {
+                    $(this).addClass('secondCardSelected cardSelected');
+                    secondCardSelected = true;
+                }
+                else if (!thirdCardSelected && eventData.numAnswers == 3) {
+                    $(this).addClass('thirdCardSelected cardSelected');
+                    thirdCardSelected = true;
+                }
+            }
+
+            //num of selected = submissions needed
+            if (eventData.numAnswers ==  $('.cardSelected').length && $(this).hasClass('cardSelected')) {
+                //add UI and button
+                $(this).parent().append('<button id="submitAnswerButton" class="answerButton" type="button">Submit!</button>');
+
+                //event handler
+                $('#submitAnswerButton').click(function() {
+                    var submitData = new Object();
+                    submitData.numAnswers = eventData.numAnswers;
+                    submitData.answer =  $('.firstCardSelected').attr('id');
+                    if (eventData.numAnswers >= 2) {
+                        submitData.answer2 =  $('.secondCardSelected').attr('id');
+                    }
+                    if (eventData.numAnswers == 3) {
+                        submitData.answer3 =  $('.thirdCardSelected').attr('id');
+                    }
+                    submitData.playerID = user.id;
+                    submitData.playerName = user.name;
+                    submitData.numAnswers = eventData.numAnswers;
+                    sendEvent("submitAnswers", submitData);
+
+                    //remove card
+                    removeCardsFromHand();
+                    $(this).removeClass('firstCardSelected secondCardSelected thirdCardSelected cardSelected');
+                    $('.answerButton').remove();
+                    $('.whitecard').unbind();
+                });
             }
         });
     }
@@ -264,21 +398,25 @@ function allowSubmissions(eventData) {
 
 function removeCardsFromHand() {
     $('.cardSelected').each(function () {
-        if ($(this).parent().hasClass('submitWrap')) {
-            $(this).parent().remove();
-        }
-        else {
-            $(this).remove();
-        }
+       $(this).parent().remove();
     });
 }
 
 function submitAnswers(eventData) {
     numSubmissions++;
-    $('#sharedArea-body').append('<div id="'+eventData.answer+'" class="whitecard card answer" data-playerName="'+eventData.playerName+'" data-playerID="'+eventData.playerID+'"><div class="cardtext"></div></div>');
+    $('#sharedArea-body').append('<div id="'+eventData.playerID+'" class="answerContainer" style="float:left" data-numanswers="'+eventData.numAnswers+'"><div id="'+eventData.answer+'" class="whitecard card answer" data-playerName="'+eventData.playerName+'" data-playerID="'+eventData.playerID+'"><div class="cardtext"></div></div></div>');
+    if (eventData.numAnswers >= 2) {
+        $('#'+eventData.playerID).append('<div id="'+eventData.answer2+'" class="whitecard card answer" data-playerName="'+eventData.playerName+'" data-playerid="'+eventData.playerID+'"><div class="cardtext"></div></div>');
+    }
+    if (eventData.numAnswers == 3) {
+        $('#'+eventData.playerID).append('<div id="'+eventData.answer3+'" class="whitecard card answer" data-playerName="'+eventData.playerName+'" data-playerid="'+eventData.playerID+'"><div class="cardtext"></div></div>');
+    }
 }
 
 function revealCards() {
+    //instructions to reader
+    gapi.hangout.layout.displayNotice("Click a card to reveal it as you read it.");
+
     //show reader all the cards
     $('.answer').each(function () {
         //get card text
@@ -287,20 +425,39 @@ function revealCards() {
     });
 
     //click reveals cards to other players
-    $('.answer').click(function() {
-        if (!$(this).hasClass('revealedCard')) {
+    $('.answerContainer').click(function() {
+        if (!$(this).hasClass('revealedSet')) {
             numRevealedSubmissions++;
 
             //send event to reveal to players
-            var eventData = new Object();
-            eventData.answer = $(this).attr('id');
+            var eventData = new Object(); eventData.containerID = $(this).attr('id');
+            eventData.numAnswers = $(this).attr('data-numanswers');
+            eventData.answer = $(this).children('div:first').attr('id');
+            if ($(this).attr('data-numanswers')>=2) {
+                eventData.answer2 = $(this).children('div:nth-child(2)').attr('id');
+            }
+            if ($(this).attr('data-numanswers')==3) {
+                eventData.answer3 = $(this).children('div:nth-child(3)').attr('id');
+            }
             sendEvent('readCard',eventData);
 
-            $(this).addClass('revealedCard');
+            $(this).addClass('revealedSet');
             //if all are reveal give ability to choose
             if (numRevealedSubmissions == numSubmissions) {
-                $('.revealedCard').wrap('<div class="chooseWrap" style="float: left"></div>');
+                $('.revealedSet').wrap('<div class="chooseWrap" style="float: left"></div>');
                 $('.chooseWrap').append('<button class="chooseAnswerButton" type="button">Winner</button>');
+
+                //choosing a winner
+                $('.chooseAnswerButton').click(function() {
+                    //event for winner chosen
+                    var eventData = new Object();
+                    eventData.playerID = $(this).parent().children('div:first').children('div:first').attr('data-playerid');
+                    eventData.playerName = $(this).parent().children('div:first').children('div:first').attr('data-playername');
+                    sendEvent("winnerPicked", eventData);
+
+                    //remove winner buttons
+                    $('.chooseAnswerButton').remove();
+                });
             }
         }
     });
@@ -312,5 +469,97 @@ function readCard(eventData) {
         //get card text
         var cardRec = masterAnswerStore.findRecord('id', eventData.answer, 0, false, false, true);
         $('#'+eventData.answer).children('div:first').text(cardRec.getData().text);
+        if (eventData.numAnswers>=2) {
+            var cardRec = masterAnswerStore.findRecord('id', eventData.answer2, 0, false, false, true);
+            $('#'+eventData.answer2).children('div:first').text(cardRec.getData().text);
+        }
+        if (eventData.numAnswers==3) {
+            var cardRec = masterAnswerStore.findRecord('id', eventData.answer3, 0, false, false, true);
+            $('#'+eventData.answer3).children('div:first').text(cardRec.getData().text);
+        }
+    }
+}
+
+function winnerPicked(eventData) {
+    var playerRecord = playerStore.findRecord("id", eventData.playerID, 0, false, false, true);
+    var points = playerRecord.get('points');
+    points++;
+    playerRecord.set('points',points);
+
+    //add winner class
+    $('#'+eventData.playerID).addClass('winner');
+
+    //cleanup shared area for both reader and players
+
+    $('.answerContainer').each(function () {
+        if (!$(this).hasClass('winner')) {
+            $(this).remove();
+        }
+    });
+
+    //check winner
+    if (points>= winningPoints) {
+        gapi.hangout.layout.displayNotice(eventData.playerName + " has won the game!");
+        //switch feed to winner
+        var winnerFeed = gapi.hangout.layout.createParticipantVideoFeed(playerRecord.get('participantID'));
+        videoCanvas.setVideoFeed(winnerFeed);
+        readerVideoWindow.setTitle('Game Winner: ' + eventData.playerName);
+
+        //play sound
+        winnerSound.play();
+
+        //center window and make it bigger
+        readerVideoWindow.center();
+        readerVideoWindow.setSize(500,500);
+        if (user.id == eventData.playerName) {
+            pancakesOverlay.setVisible(true);
+        }
+
+        //enable start game button
+        Ext.getCmp('startGameButton').enable();
+
+    } //continue round
+    else {
+        gapi.hangout.layout.displayNotice(eventData.playerName + " has won the point.");
+        var winnerFeed = gapi.hangout.layout.createParticipantVideoFeed(playerRecord.get('participantID'));
+        videoCanvas.setVideoFeed(winnerFeed);
+        readerVideoWindow.setTitle('Point Winner: ' + eventData.playerName);
+
+        //reader deals out more answers
+        if (user.id == reader.id) {
+            //wait 5 seconds to let win
+            //draw up to 10, reader deals each player numAnswers for the round
+            dealAnswers(10);
+        }
+
+        setTimeout(function(){
+            //cleanup
+            $('.blackcard').remove();
+            $('.chooseWrap').remove();
+            $('.winner').remove();
+
+            //pick new reader
+            advanceReader();
+        },5000);
+
+    }
+}
+
+function advanceReader() {
+    if (user.id == reader.id) {
+        if (readerIndex < numPlayers-1) {
+            readerIndex++;
+        }
+        else {
+            readerIndex = 0;
+        }
+
+        reader = playerStore.getAt(readerIndex).getData();
+        var eventData = new Object();
+        eventData.reader = reader;
+        eventData.readerIndex = readerIndex;
+        sendEvent('setReader',eventData);
+
+        enableReaderHand();
     }
 }

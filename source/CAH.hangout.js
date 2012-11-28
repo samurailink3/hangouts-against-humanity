@@ -4,7 +4,8 @@ function initGoogleAPI()
     var participantID = gapi.hangout.getParticipantId();
     user = {"name": gapi.hangout.getParticipantById(participantID).person.displayName,
             "id": gapi.hangout.getParticipantById(participantID).person.id,
-            "imageURL": gapi.hangout.getParticipantById(participantID).person.image.url
+            "imageURL": gapi.hangout.getParticipantById(participantID).person.image.url,
+            "participantID": participantID
     };
 
     gapi.hangout.data.onStateChanged.add(onStateChanged);
