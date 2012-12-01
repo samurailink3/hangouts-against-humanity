@@ -8,7 +8,7 @@
     -webkit-border-radius: .3em;
     -khtml-border-radius: .3em;
     padding: .25em;
-    margin: 2em .5em .5em .5em;
+    margin: 2em .5em .5em .25em;
     text-align: center;
     font-size: 1em;
     font-weight: bold;
@@ -30,6 +30,7 @@
 .blackcard {
     color: #fff;
     background-color: #000;
+    margin-left: 1em;
 }
 
 .whitecard:hover, .whitecard:active, .whitecard:focus {
@@ -96,9 +97,23 @@
 }
 
 .answerContainer {
-    margin-left: 2em;
+    margin-left: 1em;
 }
 
 .answerContainer .card {
-    margin-left: .5em;
+    margin-left: .1em;
+}
+
+.pick2 {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url(//tabletopforge.com/CAH/img/pick2.png);
+}
+
+.pick3 {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url(//tabletopforge.com/CAH/img/pick3.png);
 }

@@ -8,17 +8,18 @@ winningPoints = 0;
 firstCardSelected = false;
 secondCardSelected = false;
 thirdCardSelected = false;
+overlay = false;
 
 function startGame() {
     //start game
-    if (playerStore.count() < 3) {
+    if (playerStore.count() < 0) {
         gapi.hangout.layout.displayNotice("You need at least 3 people to play.");
     }
     else {
         //present game options
         optionsWindow = Ext.create('Ext.window.Window', {
             title:'Game Options', id:'optionsWindow',
-            width:400,
+            width:450,
             height:200,
             autoShow: true,
             modal: true,
@@ -31,13 +32,13 @@ function startGame() {
                     fieldLabel: 'Sets',
                     labelWidth: 35,
                     // Arrange checkboxes into two columns, distributed vertically
-                    columns: 2,
-                    columnWidth:  120,
+                    columns: 3,
+                    columnWidth:  140,
                     vertical: true,
                     items: [
                         { boxLabel: 'Base', name: 'sets', inputValue: 'Base', checked: true, readOnly:true },
-                        { boxLabel: 'First Expansion', name: 'sets', inputValue: 'CAHe1'},
-                        { boxLabel: 'Second Expansion', name: 'sets', inputValue: 'CAHe2' }
+                        { boxLabel: 'First Expansion', name: 'sets', checked: true, inputValue: 'CAHe1'},
+                        { boxLabel: 'Second Expansion', name: 'sets', checked: true, inputValue: 'CAHe2' }
                     ]
                 },
                 {
@@ -55,12 +56,14 @@ function startGame() {
                 {
                     text: 'Start Game',
                     handler: function () {
-                        var eventData = new Object();
-                        eventData.winningPoints = Ext.getCmp('winningPoints').getValue();
-                        eventData.sets = Ext.getCmp('setGroup').getValue();
-                        eventData.gameStarter = user.name;
-                        eventData.sender = user.id;
-                        sendEvent('startedGame', eventData);
+                        if (!gameStarted) {
+                            var eventData = new Object();
+                            eventData.winningPoints = Ext.getCmp('winningPoints').getValue();
+                            eventData.sets = Ext.getCmp('setGroup').getValue();
+                            eventData.gameStarter = user.name;
+                            eventData.sender = user.id;
+                            sendEvent('startedGame', eventData);
+                        }
 
                         this.up('window').close();
                     }
@@ -88,17 +91,21 @@ function startedGame(eventData){
 
     //winningPoints
     winningPoints = eventData.winningPoints;
-    //TODO: hide start game button, put Goal
 
     //game is ongoing
     gameStarted = true;
 
     //reposition video feed
     resetVideoWindow();
-    pancakesOverlay.setVisible(false);
+    //clear overlay
+    if (overlay) {
+        overlay.dispose();
+    }
 
     //disable start game button
-    Ext.getCmp('startGameButton').disable();
+    Ext.getCmp('startGameButton').hide();
+    Ext.getCmp('goalDisplay').setValue(winningPoints);
+    Ext.getCmp('goalDisplay').show();
 
     //initialize decks
     initDecks(eventData.sets);
@@ -106,7 +113,6 @@ function startedGame(eventData){
     //person who started the game randomly chooses reader,sends out cards
     if (eventData.sender == user.id) {
         chooseRandomReader();
-        dealAnswers(10);
     }
 }
 ///////////////////////////////////////////////////////
@@ -116,6 +122,8 @@ function startedGame(eventData){
 ///////////////////////////////////////////////////////
 function doReaderTurn() {
     if (reader.id == user.id) {
+        dealAnswers(10);
+
         numSubmissions = 0;
         numRevealedSubmissions = 0;
 
@@ -165,6 +173,9 @@ function chooseRandomReader() {
     eventData.reader = reader;
     eventData.readerIndex = readerIndex;
     sendEvent('setReader',eventData);
+
+    //to set initial card counts
+    removeCardsFromHand();
 
 }
 function setReader(eventData) {
@@ -263,33 +274,44 @@ function initDecks(setsData) {
 }
 
 function dealAnswers(handSize) {
-    //for each player
+    var cardIndexesPicked = new Array();
+
     playerStore.each(function(playerRec){
         //check number of cards and draw up to handsize
-       console.log("Cards requested to "+handSize);
-       console.log("Cards detected "+$('.myCardWrap').length);
-        var numCardsNeeded = handSize - $('.myCardWrap').length
-        if (numCardsNeeded > 0) {
+        var numCardsNeeded = handSize - playerRec.getData().cardsInHand;
+        console.log("Detected "+playerRec.getData().name+" needs " + numCardsNeeded + " cards (draw up to "+handSize+") Had "+ playerRec.getData().cardsInHand+ " cards");
+        if (numCardsNeeded > 0 && playerRec.getData().id != reader.id) {
             //pick numCards
             var pickedCards = new Array();
-            for (var i=1;i<=numCardsNeeded;i++) { var cardIndex = Math.ceil(remainingAnswerStore.count()*Math.random())-1;
+            for (var i=1;i<=numCardsNeeded;i++) {
+                var cardIndex = Math.ceil(remainingAnswerStore.count()*Math.random())-1;
+                while ($.inArray(cardIndex,cardIndexesPicked) !==-1) {
+                    cardIndex = Math.ceil(remainingAnswerStore.count()*Math.random())-1;
+                }
                 var cardRec = remainingAnswerStore.getAt(cardIndex);
                 pickedCards.push(cardRec.getData().id);
-                remainingAnswerStore.remove(cardRec);
+                cardIndexesPicked.push(cardIndex);
             }
             //send draw event to player client
             var eventData = new Object();
             eventData.playerID = playerRec.getData().id;
             eventData.cardsDrawn = pickedCards;
             sendEvent('drawAnswers',eventData);
+            console.log(playerRec.getData().name + " " + pickedCards.toString());
         }
     });
+
+    console.log(cardIndexesPicked.toString());
 }
 
 function drawAnswers(eventData) {
+    if (eventData.playerID == user.id) {
+        console.log("drawing cards:"+eventData.cardsDrawn.toString());
+    }
+
     //loop through cards drawn by everyone
     for (var i=0;i<eventData.cardsDrawn.length;i++) {
-        var cardRec = masterAnswerStore.findRecord('id', eventData.cardsDrawn[i], 0, false, false, true);
+        var cardRec = remainingAnswerStore.findRecord('id', eventData.cardsDrawn[i], 0, false, false, true);
 
         //add to your client if you drew them
         if (eventData.playerID == user.id) {
@@ -309,24 +331,33 @@ function dealQuestionCard() {
     var eventData = new Object();
     eventData.playerID = user.id;
     eventData.cardDrawn = pickedCard;
+
     sendEvent('drawQuestion',eventData);
     return cardRec.getData().numAnswers;
 }
 
 function drawQuestion(eventData) {
-    var cardRec = masterQuestionStore.findRecord('id', eventData.cardDrawn, 0, false, false, true);
+    var cardRec = remainingQuestionStore.findRecord('id', eventData.cardDrawn, 0, false, false, true);
     var cardText = cardRec.getData().text;
     cardText = cardText.replace(/_/g,'______');
 
     //add to your client if you drew them
     $('#sharedArea-body').append('<div class="blackcard card"><div class="cardtext">'+cardText+'</div></div>');
+    if (cardRec.getData().numAnswers == 2) {
+        $('.blackcard').addClass('pick2');
+    }
+    else if (cardRec.getData().numAnswers == 3) {
+        $('.blackcard').addClass('pick3');
+    }
 
      //remove card from deck
     remainingQuestionStore.remove(cardRec);
 
     //if question card draws 2, reader deals out 2 to each player
-    if (user.id == reader.id && cardRec.getData().numAnswers == 3) {
-        dealAnswers(12);
+    if (user.id == reader.id) {
+        if (cardRec.getData().numAnswers == 3) {
+            dealAnswers(12);
+        }
     }
 }
 
@@ -400,6 +431,19 @@ function removeCardsFromHand() {
     $('.cardSelected').each(function () {
        $(this).parent().remove();
     });
+    //update cards in hand for everyone
+    var eventData = new Object();
+    eventData.playerID = user.id;
+    eventData.cardsInHand = $('.myCardWrap').length;
+    sendEvent('updateCardsInHand',eventData);
+}
+
+function  updateCardsInHand(eventData) {
+    playerStore.each(function(playerRec){
+        if (playerRec.getData().id == eventData.playerID) {
+            playerRec.set('cardsInHand',eventData.cardsInHand);
+        }
+    });
 }
 
 function submitAnswers(eventData) {
@@ -421,7 +465,7 @@ function revealCards() {
     $('.answer').each(function () {
         //get card text
         var cardRec = masterAnswerStore.findRecord('id', $(this).attr('id'), 0, false, false, true);
-        $(this).children('div:first').text(cardRec.getData().text);
+        $(this).children('div:first').html(cardRec.getData().text);
     });
 
     //click reveals cards to other players
@@ -468,14 +512,14 @@ function readCard(eventData) {
     if (user.id != reader.id) {
         //get card text
         var cardRec = masterAnswerStore.findRecord('id', eventData.answer, 0, false, false, true);
-        $('#'+eventData.answer).children('div:first').text(cardRec.getData().text);
+        $('#'+eventData.answer).children('div:first').html(cardRec.getData().text);
         if (eventData.numAnswers>=2) {
             var cardRec = masterAnswerStore.findRecord('id', eventData.answer2, 0, false, false, true);
-            $('#'+eventData.answer2).children('div:first').text(cardRec.getData().text);
+            $('#'+eventData.answer2).children('div:first').html(cardRec.getData().text);
         }
         if (eventData.numAnswers==3) {
             var cardRec = masterAnswerStore.findRecord('id', eventData.answer3, 0, false, false, true);
-            $('#'+eventData.answer3).children('div:first').text(cardRec.getData().text);
+            $('#'+eventData.answer3).children('div:first').html(cardRec.getData().text);
         }
     }
 }
@@ -509,29 +553,40 @@ function winnerPicked(eventData) {
         winnerSound.play();
 
         //center window and make it bigger
-        readerVideoWindow.center();
-        readerVideoWindow.setSize(500,500);
-        if (user.id == eventData.playerName) {
-            pancakesOverlay.setVisible(true);
+        readerVideoWindow.center(); readerVideoWindow.setSize(500,300);
+        if (user.id == eventData.playerID) {
+            console.log("Pancakes should go here!");
+            var pancakes = gapi.hangout.av.effects.createImageResource('http://dl.dropbox.com/u/4606305/Odin.png');
+            overlay = pancakes.showFaceTrackingOverlay({
+                'trackingFeature': gapi.hangout.av.effects.FaceTrackingFeature.NOSE_ROOT,
+                'scaleWithFace': true,
+                'rotateWithFace': true,
+                'offset': {x: 0, y:-.1},
+                'scale': 2.5});
         }
 
         //enable start game button
-        Ext.getCmp('startGameButton').enable();
+        Ext.getCmp('startGameButton').show();
+        Ext.getCmp('goalDisplay').hide();
+
+        //cleanup
+        $('.blackcard').remove();
+        $('.chooseWrap').remove();
+        $('.winner').remove();
+
+        $('.myCardWrap').remove();
+        removeCardsFromHand();
+
+        gameStarted = false;
 
     } //continue round
     else {
         gapi.hangout.layout.displayNotice(eventData.playerName + " has won the point.");
         var winnerFeed = gapi.hangout.layout.createParticipantVideoFeed(playerRecord.get('participantID'));
         videoCanvas.setVideoFeed(winnerFeed);
-        readerVideoWindow.setTitle('Point Winner: ' + eventData.playerName);
+        readerVideoWindow.setTitle('Gloat cam: ' + eventData.playerName);
 
-        //reader deals out more answers
-        if (user.id == reader.id) {
-            //wait 5 seconds to let win
-            //draw up to 10, reader deals each player numAnswers for the round
-            dealAnswers(10);
-        }
-
+        //let round winner gloat for 5 seconds
         setTimeout(function(){
             //cleanup
             $('.blackcard').remove();

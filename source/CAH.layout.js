@@ -21,6 +21,7 @@ function initLayout() {
                     region:'west',
                     xtype: 'panel',
                     margins: '5 0 0 5',
+                    autoScroll: true,
                     width: 200,
                     collapsible: true,   // make collapsible
                     id: 'west-region-container',
@@ -48,12 +49,23 @@ function initLayout() {
                                     }
                                 },
                                 {
+                                    id:'goalDisplay',
+                                    margin: '0 0 0 5',
+                                    xtype:'numberfield',
+                                    fieldLabel:'Goal',
+                                    labelWidth:35,
+                                    width:65,
+                                    value:0,
+                                    readOnly: true,
+                                    hidden: true
+                                },
+                                {
                                     id:'turnCounter',
                                     margin: '0 0 0 25',
                                     xtype:'numberfield',
                                     fieldLabel:'Turn',
                                     labelWidth:40,
-                                    width:80,
+                                    width:75,
                                     value:0,
                                     readOnly: true
                                 },

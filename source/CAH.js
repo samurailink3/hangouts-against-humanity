@@ -31,11 +31,15 @@ gapi.hangout.onApiReady.add(function (eventObj) {
             autoShow: true,
             closable: false,
             collapsible: false,
-            resizable: false,
+            resizable: true,
             shadow: false,
             listeners : {
                 'move' : function(win,x,y,opt){
                     videoCanvas.setPosition(x+5,y+28);
+                    videoCanvas.setVisible(true);
+                },
+                'resize': function(self, width, height) {
+                    videoCanvas.setWidth(width-15);
                     videoCanvas.setVisible(true);
                 }
             }
@@ -43,15 +47,8 @@ gapi.hangout.onApiReady.add(function (eventObj) {
         $('#readerVideoWindow').mousedown(function () {videoCanvas.setVisible(false);});
         resetVideoWindow();
 
-        var pancakes = gapi.hangout.av.effects.createImageResource('http://tabletopforge.com/CAH/img/winner_pancakes.png');
-        pancakesOverlay = pancakes.createFaceTrackingOverlay({
-            'trackingFeature': gapi.hangout.av.effects.FaceTrackingFeature.NOSE_ROOT,
-            'scaleWithFace': true,
-            'rotateWithFace': true,
-            'scale': 1.0});
-
-        winnerSound = gapi.hangout.av.effects.createAudioResource(
-            'http://tabletopforge.com/CAH/img/Winner.wav').createSound({loop: false, localOnly: false});
+        var soundURL = 'https://tabletopforge.com/CAH/img/Winner.wav';
+        winnerSound = gapi.hangout.av.effects.createAudioResource(soundURL).createSound({loop: false, localOnly: true});
     }
 });
 
@@ -67,7 +64,8 @@ function updateParticipantsList() {
                 imageURL: participantArray[i].person.image.url,
                 points: 0,
                 displayIndex: 0 || participantArray[i].displayIndex,
-                participantID: participantArray[i].id
+                participantID: participantArray[i].id,
+                cardsInHand: 0
             });
         }
     }
@@ -86,7 +84,7 @@ function uniqid()
 
 function resetVideoWindow() {
     readerVideoWindow.alignTo(Ext.getBody(), "tr-tr", [-10, 10]);
-    videoCanvas.setWidth(readerVideoWindow.getWidth()-19);
+    videoCanvas.setWidth(readerVideoWindow.getWidth()-15);
     videoCanvas.setVideoFeed(defaultFeed);
     var pos = readerVideoWindow.getPosition();
     videoCanvas.setPosition(pos[0]+5, pos[1]+28);
