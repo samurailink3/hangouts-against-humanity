@@ -25,12 +25,20 @@
     background-color: #fff;
     cursor: pointer;
     margin-top: 5em;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 5% 100%;
+    background-image: url(//tabletopforge.com/CAH/img/HAH-32-whtfan.png);
 }
 
 .blackcard {
     color: #fff;
     background-color: #000;
     margin-left: 1em;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 5% 100%;
+    background-image: url(//tabletopforge.com/CAH/img/HAH-32-blkfan.png);
 }
 
 .whitecard:hover, .whitecard:active, .whitecard:focus {

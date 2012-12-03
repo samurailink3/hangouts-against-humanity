@@ -30,7 +30,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":30,"cardType":"A","text":"Roofies.","numAnswers":0,"expansion": "Base"},
     {"id":31,"cardType":"A","text":"Getting naked and watching Nickelodeon.","numAnswers":0,"expansion": "Base"},
     {"id":32,"cardType":"A","text":"The forbidden fruit.","numAnswers":0,"expansion": "Base"},
-    {"id":33,"cardType":"A","text":"Republicans","numAnswers":0,"expansion": "Base"},
+    {"id":33,"cardType":"A","text":"Republicans.","numAnswers":0,"expansion": "Base"},
     {"id":34,"cardType":"A","text":"The Big Bang.","numAnswers":0,"expansion": "Base"},
     {"id":35,"cardType":"A","text":"Anal beads.","numAnswers":0,"expansion": "Base"},
     {"id":36,"cardType":"A","text":"Amputees.","numAnswers":0,"expansion": "Base"},

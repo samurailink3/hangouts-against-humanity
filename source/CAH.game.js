@@ -12,7 +12,7 @@ overlay = false;
 
 function startGame() {
     //start game
-    if (playerStore.count() < 0) {
+    if (playerStore.count() < 3) {
         gapi.hangout.layout.displayNotice("You need at least 3 people to play.");
     }
     else {
@@ -25,6 +25,7 @@ function startGame() {
             modal: true,
             collapsible: false,
             resizable: false,
+            shadow:false,
             items: [
                 {
                     xtype: 'checkboxgroup',
@@ -63,6 +64,9 @@ function startGame() {
                             eventData.gameStarter = user.name;
                             eventData.sender = user.id;
                             sendEvent('startedGame', eventData);
+
+                            gapi.hangout.data.setValue('winningPoints', winningPoints.toString());
+                            gapi.hangout.data.setValue('sets',JSON.stringify(Ext.getCmp('setGroup').getValue()));
                         }
 
                         this.up('window').close();
@@ -121,6 +125,10 @@ function startedGame(eventData){
 //
 ///////////////////////////////////////////////////////
 function doReaderTurn() {
+    //try and catch new/left players
+    updateParticipantsList();
+    numPlayers = playerStore.count();
+
     if (reader.id == user.id) {
         dealAnswers(10);
 
@@ -131,6 +139,7 @@ function doReaderTurn() {
         disableReaderHand();
 
         //increment turn counter for everyone
+        gapi.hangout.data.setValue('turn', (gapi.hangout.data.getValue('turn')+1).toString());
         sendEvent('incrementTurnCounter');
 
         //deal question card and get number of answers
@@ -142,12 +151,17 @@ function doReaderTurn() {
         sendEvent('allowSubmissions', eventData);
 
         //wait until all players have submitted
+        var numLoops = 0;
         var sLoop = setInterval(function () {checkSubmission();},1000);
 
         function checkSubmission()
         {
-            if (numSubmissions == numPlayers-1) {
+            numLoops++;
+            //all submission in or 3 minutes passed (in case of a drop)
+            Ext.getCmp('gameStatePanel').setTitle("Round Timer:" + (120-numLoops) + " seconds");
+            if (numSubmissions == numPlayers-1 || numLoops > 120) {
                 clearInterval(sLoop);
+                Ext.getCmp('gameStatePanel').setTitle("Game State");
                 revealCards();
             }
         }
@@ -279,8 +293,8 @@ function dealAnswers(handSize) {
     playerStore.each(function(playerRec){
         //check number of cards and draw up to handsize
         var numCardsNeeded = handSize - playerRec.getData().cardsInHand;
-        console.log("Detected "+playerRec.getData().name+" needs " + numCardsNeeded + " cards (draw up to "+handSize+") Had "+ playerRec.getData().cardsInHand+ " cards");
         if (numCardsNeeded > 0 && playerRec.getData().id != reader.id) {
+            console.log("Detected "+playerRec.getData().name+" needs " + numCardsNeeded + " cards (draw up to "+handSize+") Had "+ playerRec.getData().cardsInHand+ " cards");
             //pick numCards
             var pickedCards = new Array();
             for (var i=1;i<=numCardsNeeded;i++) {
@@ -300,7 +314,6 @@ function dealAnswers(handSize) {
             console.log(playerRec.getData().name + " " + pickedCards.toString());
         }
     });
-
     console.log(cardIndexesPicked.toString());
 }
 
@@ -356,7 +369,8 @@ function drawQuestion(eventData) {
     //if question card draws 2, reader deals out 2 to each player
     if (user.id == reader.id) {
         if (cardRec.getData().numAnswers == 3) {
-            dealAnswers(12);
+            //dealAnswers(12);
+            //TODO: deal up to 12, issue is timing as main loop keeps going
         }
     }
 }
@@ -556,13 +570,13 @@ function winnerPicked(eventData) {
         readerVideoWindow.center(); readerVideoWindow.setSize(500,300);
         if (user.id == eventData.playerID) {
             console.log("Pancakes should go here!");
-            var pancakes = gapi.hangout.av.effects.createImageResource('http://dl.dropbox.com/u/4606305/Odin.png');
+            var pancakes = gapi.hangout.av.effects.createImageResource('https://tabletopforge.com/CAH/img/winner_pancake.png');
             overlay = pancakes.showFaceTrackingOverlay({
                 'trackingFeature': gapi.hangout.av.effects.FaceTrackingFeature.NOSE_ROOT,
                 'scaleWithFace': true,
                 'rotateWithFace': true,
-                'offset': {x: 0, y:-.1},
-                'scale': 2.5});
+                'offset': {x: 0, y:0},
+                'scale': 2.0});
         }
 
         //enable start game button

@@ -23,8 +23,9 @@ function initLayout() {
                     margins: '5 0 0 5',
                     autoScroll: true,
                     width: 200,
+                    split: true,
                     collapsible: true,   // make collapsible
-                    id: 'west-region-container',
+                    id: 'gameStatePanel',
                     layout:{
                         type:'vbox',
                         align:'stretch'
