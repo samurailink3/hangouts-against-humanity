@@ -106,9 +106,79 @@ function initLayout() {
                     xtype: 'panel',
                     layout: 'fit',
                     margins: '5 5 0 0',
-                    autoScroll: true
+                    autoScroll: true,
+                    tools:[
+                        /* {
+                         type:'gear',
+                         handler:function () {
+                         //chat settings here
+                         }},*/
+                        {
+                            type:'help',
+                            handler:function () {
+                                if (helpWindow.isVisible()) {
+                                    helpWindow.hide();
+                                }
+                                else {
+                                    helpWindow.show();
+                                }
+                            }
+                        }
+                    ]
                 }],
                 renderTo: Ext.getBody()
+            });
+
+
+            //right click menu for normal dice
+            specialMenu = new Ext.menu.Menu({
+                floating:true,
+                showSeparator: false,
+                cls: 'no-icon-menu',
+                items: [{
+                    id: 'resetGame',
+                    text: 'Reset Game',
+                    iconCls: 'edit'
+                }
+                ],
+                listeners: {
+                    click: function(menu,item,mouseevent) {
+                        if ( item.id == "resetGame") {
+                           sendEvent("resetGame");
+                        }
+                    }
+                }
+            });
+
+            //interactive events
+            Ext.select("#gameStatePanel_header").on('contextmenu', function(e) {
+                if (e.shiftKey) {
+                    e.preventDefault();
+                    specialMenu.showAt(e.getXY());
+                }
+            });
+
+            helpWindow = Ext.create('Ext.window.Window', {
+                title:'Help',
+                id:'helpWindow',
+                height: 500,
+                width: 500,
+                closeAction:'hide',
+                autoScroll: true,
+                items:[
+                    {
+                        xtype: 'tabpanel',
+                        id: 'chatHelpTabPanel',
+                        items: [
+                            {
+                                title: 'Interface',
+                                xtype: 'panel',
+                                bodyPadding: 10,
+                                styleHtmlContent: true,
+                                html: 'To reset the application state hold shift+right-click on the Game State title area and click Reset Game. Note this will cause a new game to need to be started.<br><br><br>Known Bugs<ul><li>Sometimes when a new person joins you may get dealt more than 10 cards</li><li>People joining and leaving in the middle of the round can still cause strange behavior.</li><li>Floating video window can go outside of the frame.</li></ul>'
+                            }
+                        ]
+                    }]
             });
         }
     });

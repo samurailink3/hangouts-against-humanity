@@ -9,6 +9,7 @@ firstCardSelected = false;
 secondCardSelected = false;
 thirdCardSelected = false;
 overlay = false;
+masterCardsPicked = new Array();
 
 function startGame() {
     //start game
@@ -34,12 +35,14 @@ function startGame() {
                     labelWidth: 35,
                     // Arrange checkboxes into two columns, distributed vertically
                     columns: 3,
-                    columnWidth:  140,
-                    vertical: true,
+                    columnWidth:  240,
+                    vertical: false,
                     items: [
                         { boxLabel: 'Base', name: 'sets', inputValue: 'Base', checked: true, readOnly:true },
                         { boxLabel: 'First Expansion', name: 'sets', checked: true, inputValue: 'CAHe1'},
-                        { boxLabel: 'Second Expansion', name: 'sets', checked: true, inputValue: 'CAHe2' }
+                        { boxLabel: 'Second Expansion', name: 'sets', checked: true, inputValue: 'CAHe2' },
+                        { boxLabel: 'Grognards (fan RPG set)', name: 'sets', checked: false, inputValue: 'CAHgrognards' },
+                        { boxLabel: 'Weeaboo (fan Anime set)', name: 'sets', checked: false, inputValue: 'CAHweeaboo' }
                     ]
                 },
                 {
@@ -65,8 +68,9 @@ function startGame() {
                             eventData.sender = user.id;
                             sendEvent('startedGame', eventData);
 
-                            gapi.hangout.data.setValue('winningPoints', winningPoints.toString());
+                            gapi.hangout.data.setValue('winningPoints', Ext.getCmp('winningPoints').getValue().toString());
                             gapi.hangout.data.setValue('sets',JSON.stringify(Ext.getCmp('setGroup').getValue()));
+                            gapi.hangout.data.setValue('masterCardsPicked', "");
                         }
 
                         this.up('window').close();
@@ -125,8 +129,6 @@ function startedGame(eventData){
 //
 ///////////////////////////////////////////////////////
 function doReaderTurn() {
-    //try and catch new/left players
-    updateParticipantsList();
     numPlayers = playerStore.count();
 
     if (reader.id == user.id) {
@@ -139,7 +141,8 @@ function doReaderTurn() {
         disableReaderHand();
 
         //increment turn counter for everyone
-        gapi.hangout.data.setValue('turn', (gapi.hangout.data.getValue('turn')+1).toString());
+        var curTurn = Ext.getCmp('turnCounter').getValue()+1;
+        gapi.hangout.data.setValue('turn', curTurn.toString());
         sendEvent('incrementTurnCounter');
 
         //deal question card and get number of answers
@@ -270,6 +273,7 @@ function initDecks(setsData) {
         ]
     });
 
+    console.log(setsData.sets);
     if (setsData.sets == 'base') {
         masterQuestionStore.filter('expansion','Base');
         masterAnswerStore.filter('expansion','Base');
@@ -278,17 +282,24 @@ function initDecks(setsData) {
     }
     else {
         //apply expansion filters
-        for (var i; i<setsData.sets.length; i++) {
-            masterQuestionStore.filter('expansion',setsData.sets[i]);
-            masterAnswerStore.filter('expansion',setsData.sets[i]);
-            remainingQuestionStore.filter('expansion',setsData.sets[i]);
-            remainingAnswerStore.filter('expansion',setsData.sets[i]);
+        var setsArray = setsData.sets;
+        console.log(setsArray.length);
+        for (var i; i<setsArray.length; i++) {
+            masterQuestionStore.filter('expansion',setsArray.sets[i]);
+            masterAnswerStore.filter('expansion',setsArray.sets[i]);
+            remainingQuestionStore.filter('expansion',setsArray.sets[i]);
+            remainingAnswerStore.filter('expansion',setsArray.sets[i]);
+            console.log("RA Store count "+remainingAnswerStore.count());
         }
     }
 }
 
 function dealAnswers(handSize) {
     var cardIndexesPicked = new Array();
+    var masterCardsString = gapi.hangout.data.getValue('masterCardsPicked');
+    if (masterCardsString != "") {
+        masterCardsPicked = masterCardsString.split(',');
+    }
 
     playerStore.each(function(playerRec){
         //check number of cards and draw up to handsize
@@ -305,6 +316,7 @@ function dealAnswers(handSize) {
                 var cardRec = remainingAnswerStore.getAt(cardIndex);
                 pickedCards.push(cardRec.getData().id);
                 cardIndexesPicked.push(cardIndex);
+                masterCardsPicked.push(cardIndex);
             }
             //send draw event to player client
             var eventData = new Object();
@@ -315,6 +327,7 @@ function dealAnswers(handSize) {
         }
     });
     console.log(cardIndexesPicked.toString());
+    gapi.hangout.data.setValue('masterCardsPicked', masterCardsPicked.toString());
 }
 
 function drawAnswers(eventData) {
@@ -339,6 +352,14 @@ function dealQuestionCard() {
     var cardIndex = Math.ceil(remainingQuestionStore.count()*Math.random())-1;
     var cardRec = remainingQuestionStore.getAt(cardIndex);
     var pickedCard = cardRec.getData().id;
+
+    var masterCardsString = gapi.hangout.data.getValue('masterCardsPicked');
+    if (masterCardsString != "") {
+        masterCardsPicked = masterCardsString.split(',');
+    }
+
+    masterCardsPicked.push(pickedCard);
+    gapi.hangout.data.setValue('masterCardsPicked', masterCardsPicked.toString());
 
     //send draw event to player client
     var eventData = new Object();
@@ -579,19 +600,7 @@ function winnerPicked(eventData) {
                 'scale': 2.0});
         }
 
-        //enable start game button
-        Ext.getCmp('startGameButton').show();
-        Ext.getCmp('goalDisplay').hide();
-
-        //cleanup
-        $('.blackcard').remove();
-        $('.chooseWrap').remove();
-        $('.winner').remove();
-
-        $('.myCardWrap').remove();
-        removeCardsFromHand();
-
-        gameStarted = false;
+        resetGame();
 
     } //continue round
     else {
@@ -615,6 +624,8 @@ function winnerPicked(eventData) {
 }
 
 function advanceReader() {
+    //try and catch new/left players
+    updateParticipantsList();
     if (user.id == reader.id) {
         if (readerIndex < numPlayers-1) {
             readerIndex++;
@@ -631,4 +642,27 @@ function advanceReader() {
 
         enableReaderHand();
     }
+}
+
+function resetGame() {
+    //enable start game button
+    Ext.getCmp('startGameButton').show();
+    Ext.getCmp('goalDisplay').hide();
+
+    //cleanup
+    $('.blackcard').remove();
+    $('.chooseWrap').remove();
+    $('.winner').remove();
+    $('.answerContainer').remove();
+
+    $('.myCardWrap').remove();
+    removeCardsFromHand();
+
+    gameStarted = false;
+
+    clearPoints();
+    Ext.getCmp('turnCounter').setValue(0);
+
+    //try and catch new/left players
+    updateParticipantsList();
 }

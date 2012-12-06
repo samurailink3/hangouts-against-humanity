@@ -74,7 +74,12 @@ function warningPrompt() {
                     winnerSound = gapi.hangout.av.effects.createAudioResource(soundURL).createSound({loop: false, localOnly: true});
 
                     //check if game starter and if so sync to game state
-                    if (gapi.hangout.data.getValue('winningPoints') >=1 ) {
+                    if (typeof gapi.hangout.data.getValue('winningPoints') !== "undefined") {
+                        console.log("game is ongoing, attempting to sync state");
+                        console.log("Goal:"+  gapi.hangout.data.getValue('winningPoints'));
+                        if (typeof gapi.hangout.data.getValue('turn') !== "undefined") {console.log("Turn:"+gapi.hangout.data.getValue('turn'));}
+                        if (typeof gapi.hangout.data.getValue('sets') !== "undefined") { console.log("Sets"+gapi.hangout.data.getValue('sets'));}
+                        if (typeof gapi.hangout.data.getValue('masterCardsPicked') !== "undefined") { console.log("Cards picked:"+gapi.hangout.data.getValue('masterCardsPicked'));}
                         syncNewPlayer();
                     }
                 }
@@ -91,7 +96,7 @@ function warningPrompt() {
 
 function syncNewPlayer() {
     //winningPoints
-    winningPoints = gapi.hangout.data.getValue('winningPoints');
+    winningPoints = parseInt(gapi.hangout.data.getValue('winningPoints'));
 
     //game is ongoing
     gameStarted = true;
@@ -104,8 +109,24 @@ function syncNewPlayer() {
     //initialize decks
     initDecks(JSON.parse(gapi.hangout.data.getValue('sets')));
 
+    //get all cards picked so far
+    var masterCardsString = gapi.hangout.data.getValue('masterCardsPicked');
+    if (masterCardsString != "") {
+        masterCardsPicked = masterCardsString.split(',');
+    }
+    for (var i; i<masterCardsPicked.length;i++) {
+        var questionRec = remainingQuestionStore.findRecord('id', masterCardsPicked[i], 0, false, false, true);
+        if (questionRec){
+            remainingQuestionStore.remove(questionRec);
+        }
+        var answerRec = remainingAnswerStore.findRecord('id', masterCardsPicked[i], 0, false, false, true);
+        if (answerRec){
+            remainingAnswerStore.remove(answerRec);
+        }
+    }
+
     //correct the turn
-    Ext.getCmp('turnCounter').setValue(gapi.hangout.data.getValue('turn'));
+    Ext.getCmp('turnCounter').setValue(parseInt(gapi.hangout.data.getValue('turn')));
 }
 
 //controller functions
@@ -129,11 +150,11 @@ function updateParticipantsList() {
     //remove players no longer in the game
     var playersToRemove = new Array();
     playerStore.each(function (playerRec) {
+        found = false;
         for (var i=0; i<participantArray.length;i++) {
-            found = false;
-            console.log(participantArray[i]);
-            console.log(playerRec);
-            if (participantArray[i].person.id == playerRec.getData().id) {
+            //console.log(participantArray[i]);
+            //console.log(playerRec);
+            if (participantArray[i].id == playerRec.getData().participantID) {
                 found = true;
             }
         }
@@ -141,6 +162,7 @@ function updateParticipantsList() {
             playersToRemove.push(playerRec);
         }
     });
+
 
     for (var i=0; i<playersToRemove.length;i++) {
         playerStore.remove(playersToRemove[i]);
@@ -160,7 +182,9 @@ function uniqid()
 }
 
 function resetVideoWindow() {
-    readerVideoWindow.alignTo(Ext.getBody(), "tr-tr", [-10, 20]);
+    readerVideoWindow.alignTo(Ext.getBody(), "tr-tr", [-10, 100]);
+    readerVideoWindow.setWidth(300);
+    readerVideoWindow.setHeight(200);
     videoCanvas.setWidth(readerVideoWindow.getWidth()-19);
     videoCanvas.setVideoFeed(defaultFeed);
     var pos = readerVideoWindow.getPosition();
