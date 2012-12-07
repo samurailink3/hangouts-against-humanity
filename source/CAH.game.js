@@ -41,8 +41,10 @@ function startGame() {
                         { boxLabel: 'Base', name: 'sets', inputValue: 'Base', checked: true, readOnly:true },
                         { boxLabel: 'First Expansion', name: 'sets', checked: true, inputValue: 'CAHe1'},
                         { boxLabel: 'Second Expansion', name: 'sets', checked: true, inputValue: 'CAHe2' },
+                        { boxLabel: 'Christmas Set', name: 'sets', checked: false, inputValue: 'CAHxmas' },
                         { boxLabel: 'Grognards (fan RPG set)', name: 'sets', checked: false, inputValue: 'CAHgrognards' },
                         { boxLabel: 'Weeaboo (fan Anime set)', name: 'sets', checked: false, inputValue: 'CAHweeaboo' }
+
                     ]
                 },
                 {
@@ -221,11 +223,25 @@ function enableReaderHand() {
 }
 
 function initDecks(setsData) {
+    console.log(setsData.sets);
+    var thisGameCards = new Array();
+    console.log(masterCards.length);
+    console.log(thisGameCards.length);
+    for (var i in masterCards) {
+        console.log($.inArray(masterCards[i].expansion,setsData.sets));
+        if ($.inArray(masterCards[i].expansion,setsData.sets) > -1) {
+            thisGameCards.push(masterCards[i]);
+        }
+    }
+    console.log("after");
+    console.log(masterCards.length);
+    console.log(thisGameCards.length);
+
     //master questions store
     masterQuestionStore = Ext.create('Ext.data.Store', {
         storeId:'masterQuestionStore',
         fields:['id', 'text', 'numAnswers', 'cardType'],
-        data: masterCards,
+        data: thisGameCards,
         filters: [
             {
                 property: 'cardType',
@@ -238,7 +254,7 @@ function initDecks(setsData) {
     masterAnswerStore = Ext.create('Ext.data.Store', {
         storeId:'masterAnswerStore',
         fields:['id', 'text', 'cardType'],
-        data: masterCards,
+        data: thisGameCards,
         filters: [
             {
                 property: 'cardType',
@@ -251,7 +267,7 @@ function initDecks(setsData) {
     remainingQuestionStore = Ext.create('Ext.data.Store', {
         storeId:'remainingQuestionStore',
         fields:['id', 'text', 'numAnswers', 'cardType'],
-        data: masterCards,
+        data: thisGameCards,
         filters: [
             {
                 property: 'cardType',
@@ -264,7 +280,7 @@ function initDecks(setsData) {
     remainingAnswerStore = Ext.create('Ext.data.Store', {
         storeId:'remainingAnswerStore',
         fields:['id', 'text', 'cardType'],
-        data: masterCards,
+        data: thisGameCards,
         filters: [
             {
                 property: 'cardType',
@@ -273,25 +289,7 @@ function initDecks(setsData) {
         ]
     });
 
-    console.log(setsData.sets);
-    if (setsData.sets == 'base') {
-        masterQuestionStore.filter('expansion','Base');
-        masterAnswerStore.filter('expansion','Base');
-        remainingQuestionStore.filter('expansion','Base');
-        remainingAnswerStore.filter('expansion','Base');
-    }
-    else {
-        //apply expansion filters
-        var setsArray = setsData.sets;
-        console.log(setsArray.length);
-        for (var i; i<setsArray.length; i++) {
-            masterQuestionStore.filter('expansion',setsArray.sets[i]);
-            masterAnswerStore.filter('expansion',setsArray.sets[i]);
-            remainingQuestionStore.filter('expansion',setsArray.sets[i]);
-            remainingAnswerStore.filter('expansion',setsArray.sets[i]);
-            console.log("RA Store count "+remainingAnswerStore.count());
-        }
-    }
+
 }
 
 function dealAnswers(handSize) {
