@@ -25,20 +25,20 @@
         </script>
 
         <!-- jQuery -->
-        <script src="//tabletopforge.com/CAH/js/jquery-1.7.2.min.js"></script>
+        <script src="//hangoutsagainsthumanity.com/game/source/js/jquery-1.7.2.min.js"></script>
 
         <!-- ExtJS -->
-        <script src="//tabletopforge.com/CAH/js/ext-all-debug.js"></script>
-        <link rel="stylesheet" href="//tabletopforge.com/CAH/resources/css/ext-all-gray.css">
+        <script src="//hangoutsagainsthumanity.com/game/source/js/ext-all-debug.js"></script>
+        <link rel="stylesheet" href="//hangoutsagainsthumanity.com/game/source/resources/css/ext-all-gray.css">
 
         <!-- CAH -->
-        <link rel="stylesheet" href="//tabletopforge.com/CAH/css/CAH.css">
-        <script src="//tabletopforge.com/CAH/CAH.hangout.js"></script>
-        <script src="//tabletopforge.com/CAH/data/cards.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.dataStores.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.game.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.layout.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.js"></script>
+        <link rel="stylesheet" href="//hangoutsagainsthumanity.com/game/source/css/CAH.css">
+        <script src="//hangoutsagainsthumanity.com/game/source/CAH.hangout.js"></script>
+        <script src="//hangoutsagainsthumanity.com/game/source/data/cards.js"></script>
+        <script src="//hangoutsagainsthumanity.com/game/source/CAH.dataStores.js"></script>
+        <script src="//hangoutsagainsthumanity.com/game/source/CAH.game.js"></script>
+        <script src="//hangoutsagainsthumanity.com/game/source/CAH.layout.js"></script>
+        <script src="//hangoutsagainsthumanity.com/game/source/CAH.js"></script>
 
         <html>
         <head>
