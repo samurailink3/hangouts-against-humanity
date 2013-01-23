@@ -993,4 +993,5 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":993,"cardType":"A","text":"A visually arresting turtleneck.","numAnswers":0,"expansion":"CAHxmas"},
     {"id":994,"cardType":"A","text":"A toxic family environment.","numAnswers":0,"expansion":"CAHxmas"},
     {"id":995,"cardType":"A","text":"Eating an entire snowman.","numAnswers":0,"expansion":"CAHxmas"}
+    {"id":996,"cardType":"A","text":"Bumpses.","numAnswers":0,"expansion":"indywrestling"}
 ]
