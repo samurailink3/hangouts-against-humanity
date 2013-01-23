@@ -993,4 +993,51 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":993,"cardType":"A","text":"A visually arresting turtleneck.","numAnswers":0,"expansion":"CAHxmas"},
     {"id":994,"cardType":"A","text":"A toxic family environment.","numAnswers":0,"expansion":"CAHxmas"},
     {"id":995,"cardType":"A","text":"Eating an entire snowman.","numAnswers":0,"expansion":"CAHxmas"}
+    {"id":996,"cardType":"A","text":"Bumpses.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":997,"cardType":"A","text":"A Vin Gerard H8 X 10.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":998,"cardType":"Q","text":"We got the third rope, now where's the fourth?","numAnswers":1,"expansion":"NEIndy"}
+    {"id":999,"cardType":"A","text":"Harry Acropolis.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1000,"cardType":"A","text":"Under the ring.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1001,"cardType":"Q","text":"Tonights main event, ____ vs. ____.","numAnswers":2,"expansion":"NEIndy"}
+    {"id":1002,"cardType":"A","text":"Afa The Wild Samoan.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1003,"cardType":"Q","text":"Tackle, Dropdown, _____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1004,"cardType":"A","text":"Peanut Butter and Baby sandwiches.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1005,"cardType":"Q","text":"Christopher Daniels is late on his _____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1006,"cardType":"A","text":"Yard Tards.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1007,"cardType":"A","text":"Two girls, one cup.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1008,"cardType":"A","text":"Ugly Mexican Hookers.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1009,"cardType":"A","text":"Duct tape.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1010,"cardType":"A","text":"Sodaj.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1011,"cardType":"Q","text":"Instead of booking ____, they should have booked ____.","numAnswers":2,"expansion":"NEIndy"}
+    {"id":1012,"cardType":"Q","text":"Genius is 10% inspiration, 90% _____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1013,"cardType":"Q","text":"They found ____ in the dumpster behind ____.","numAnswers":2,"expansion":"NEIndy"}
+    {"id":1014,"cardType":"A","text":"Steve The Teacher.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1015,"cardType":"Q","text":"The best thing I ever got for Christmas was ____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1016,"cardType":"A","text":"Jefferee.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1017,"cardType":"Q","text":"There's no crying in _____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1018,"cardType":"Q","text":"Mastodon! Pterodactyl! Triceratops! Sabretooth Tiger! ____!","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1019,"cardType":"A","text":"Autoerotic Asphyxiation.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1020,"cardType":"Q","text":"Don't eat the ____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1021,"cardType":"A","text":"Sonic The Hedgehog.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1022,"cardType":"A","text":"Lotto Money.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1023,"cardType":"Q","text":"He did ____ with the ____!?!","numAnswers":2,"expansion":"NEIndy"}
+    {"id":1024,"cardType":"A","text":"Jailbait.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1025,"cardType":"A","text":"Prison rape.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1026,"cardType":"Q","text":"SOOOOO hot, want to touch the ____.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1027,"cardType":"Q","text":"Stop looking at me _____!","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1028,"cardType":"A","text":"Two And A Half Men.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1029,"cardType":"A","text":"Anne Frank.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1030,"cardType":"A","text":"Black Santa.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1031,"cardType":"Q","text":"I'm cuckoo for ____ puffs.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1032,"cardType":"Q","text":"Silly rabbit, ____ are for kids.","numAnswers":1,"expansion":"NEIndy"}
+    {"id":1033,"cardType":"A","text":"Jesus Christ(our lord and saviour.)","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1034,"cardType":"A","text":"Farting with your armpits.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1035,"cardType":"A","text":"Poopsicles.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1036,"cardType":"A","text":"Slaughtering innocent children.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1037,"cardType":"A","text":"Sex with vegetables.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1038,"cardType":"A","text":"My gay ex-husband.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1039,"cardType":"A","text":"Accidentally sexting your mom.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1040,"cardType":"A","text":"Tabasco in your pee-hole.","numAnswers":0,"expansion":"NEIndy"}
+    {"id":1041,"cardType":"A","text":"Pee Wee Herman.","numAnswers":0,"expansion":"NEIndy"}
+    
 ]
