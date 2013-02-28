@@ -1,0 +1,127 @@
+.card {
+    display: inline-block;
+    width: 11em;
+    height: 13em;
+    border: 1px solid #666;
+    border-radius: .3em;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+    -khtml-border-radius: .3em;
+    padding: .25em;
+    margin: 2em .5em .5em .25em;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    font-family:Helvetica;
+    position: relative;
+    -moz-box-shadow: .2em .2em .5em #333;
+    -webkit-box-shadow: .2em .2em .5em #333;
+    box-shadow: .2em .2em .5em #333;
+    float: left;
+}
+
+.whitecard {
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    margin-top: 5em;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 5% 100%;
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/HAH-32-whtfan.png);
+}
+
+.blackcard {
+    color: #fff;
+    background-color: #000;
+    margin-left: 1em;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 5% 100%;
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/HAH-32-blkfan.png);
+}
+
+.whitecard:hover, .whitecard:active, .whitecard:focus {
+    bottom: 3em;
+}
+
+.cardtext {
+    padding-top: 1em;
+}
+
+.cellPadding {
+    padding-top: 6px;
+}
+
+.cardSelected {
+    bottom: 3em;
+    border-color: red;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.firstCardSelected {
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/trans-1.jpg);
+}
+
+.secondCardSelected {
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/trans-2.jpg);
+}
+
+.thirdCardSelected {
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/trans-3.jpg);
+}
+
+.answerButton {
+    float: left;
+    clear: left;
+    margin-left: 3em;
+    margin-top: -3em;
+}
+
+.revealButton {
+    float: left;
+    clear: left;
+    margin-left: 3em;
+    margin-top: -3em;
+}
+
+.chooseAnswerButton {
+    float: left;
+    clear: left;
+    margin-left: 3em;
+}
+
+.revealedSet {
+    border-color: blue;
+}
+
+.revealedSet div.whitecard {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/eye.png);
+}
+
+.answerContainer {
+    margin-left: 1.5em;
+}
+
+.answerContainer .card {
+    margin-left: .1em;
+}
+
+.pick2 {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/pick2.png);
+}
+
+.pick3 {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/pick3.png);
+}
