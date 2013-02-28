@@ -25,20 +25,20 @@
         </script>
 
         <!-- jQuery -->
-        <script src="http://hangoutsagainsthumanity.com/game/js/jquery-1.7.2.min.js"></script>
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/js/jquery-1.7.2.min.js"></script>
 
         <!-- ExtJS -->
-        <script src="http://hangoutsagainsthumanity.com/game/js/ext-all-debug.js"></script>
-        <link rel="stylesheet" href="http://hangoutsagainsthumanity.com/game/resources/css/ext-all-gray.css">
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/js/ext-all-debug.js"></script>
+        <link rel="stylesheet" href="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/resources/css/ext-all-gray.css">
 
         <!-- CAH -->
-        <link rel="stylesheet" href="http://hangoutsagainsthumanity.com/game/css/CAH.css">
-        <script src="http://hangoutsagainsthumanity.com/game/CAH.hangout.js"></script>
-        <script src="http://hangoutsagainsthumanity.com/game/data/cards.js"></script>
-        <script src="http://hangoutsagainsthumanity.com/game/CAH.dataStores.js"></script>
-        <script src="http://hangoutsagainsthumanity.com/game/CAH.game.js"></script>
-        <script src="http://hangoutsagainsthumanity.com/game/CAH.layout.js"></script>
-        <script src="http://hangoutsagainsthumanity.com/game/CAH.js"></script>
+        <link rel="stylesheet" href="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/css/CAH.css">
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/CAH.hangout.js"></script>
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/data/cards.js"></script>
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/CAH.dataStores.js"></script>
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/CAH.game.js"></script>
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/CAH.layout.js"></script>
+        <script src="https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/CAH.js"></script>
 
         <html>
         <head>

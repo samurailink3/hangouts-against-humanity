@@ -21,14 +21,14 @@
 }
 
 .whitecard {
-    color: #333;
+    color: #333;s
     background-color: #fff;
     cursor: pointer;
     margin-top: 5em;
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/HAH-32-whtfan.png);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/HAH-32-whtfan.png);
 }
 
 .blackcard {
@@ -38,7 +38,7 @@
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/HAH-32-blkfan.png);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/HAH-32-blkfan.png);
 }
 
 .whitecard:hover, .whitecard:active, .whitecard:focus {
@@ -62,15 +62,15 @@
 }
 
 .firstCardSelected {
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/trans-1.jpg);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/trans-1.jpg);
 }
 
 .secondCardSelected {
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/trans-2.jpg);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/trans-2.jpg);
 }
 
 .thirdCardSelected {
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/trans-3.jpg);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/trans-3.jpg);
 }
 
 .answerButton {
@@ -101,7 +101,7 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/eye.png);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/eye.png);
 }
 
 .answerContainer {
@@ -116,12 +116,12 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/pick2.png);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/pick2.png);
 }
 
 .pick3 {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-image: url(http://hangoutsagainsthumanity.com/game/img/pick3.png);
+    background-image: url(https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/pick3.png);
 }

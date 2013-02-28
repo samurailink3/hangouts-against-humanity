@@ -82,7 +82,7 @@ function warningPrompt() {
                     $('#readerVideoWindow').mousedown(function () {videoCanvas.setVisible(false);});
                     resetVideoWindow();
 
-                    var soundURL = 'http://hangoutsagainsthumanity.com/game/img/Winner.wav';
+                    var soundURL = 'https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/Winner.wav';
                     winnerSound = gapi.hangout.av.effects.createAudioResource(soundURL).createSound({loop: false, localOnly: true});
 
                     //check if game starter and if so sync to game state

@@ -595,7 +595,7 @@ function winnerPicked(eventData) {
         //center window and make it bigger
         readerVideoWindow.center(); readerVideoWindow.setSize(500,300);
         if (user.id == eventData.playerID) {
-            var pancakes = gapi.hangout.av.effects.createImageResource('http://hangoutsagainsthumanity.com/game/img/winner_pancake.png');
+            var pancakes = gapi.hangout.av.effects.createImageResource('https://85117101e0f26bedf67e-15ab98c82e424146710a86f06b19b7ce.ssl.cf1.rackcdn.com/img/winner_pancake.png');
             overlay = pancakes.showFaceTrackingOverlay({
                 'trackingFeature': gapi.hangout.av.effects.FaceTrackingFeature.NOSE_ROOT,
                 'scaleWithFace': true,
