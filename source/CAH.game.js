@@ -162,7 +162,7 @@ function doReaderTurn() {
         function checkSubmission()
         {
             numLoops++;
-            //all submission in or 3 minutes passed (in case of a drop)
+            //all submission in or 2 minutes passed (in case of a drop)
             Ext.getCmp('gameStatePanel').setTitle("Round Timer:" + (120-numLoops) + " seconds");
             if (numSubmissions == numPlayers-1 || numLoops > 120) {
                 clearInterval(sLoop);
@@ -223,19 +223,19 @@ function enableReaderHand() {
 }
 
 function initDecks(setsData) {
-    console.log(setsData.sets);
     var thisGameCards = new Array();
-    console.log(masterCards.length);
-    console.log(thisGameCards.length);
     for (var i in masterCards) {
-        console.log($.inArray(masterCards[i].expansion,setsData.sets));
-        if ($.inArray(masterCards[i].expansion,setsData.sets) > -1) {
-            thisGameCards.push(masterCards[i]);
+        if (setsData.sets == 'Base') {
+            if (masterCards[i].expansion == 'Base') {
+                thisGameCards.push(masterCards[i]);
+            }
+        }
+        else {
+            if ($.inArray(masterCards[i].expansion,setsData.sets) > -1) {
+                thisGameCards.push(masterCards[i]);
+            }
         }
     }
-    console.log("after");
-    console.log(masterCards.length);
-    console.log(thisGameCards.length);
 
     //master questions store
     masterQuestionStore = Ext.create('Ext.data.Store', {
@@ -324,14 +324,13 @@ function dealAnswers(handSize) {
             console.log(playerRec.getData().name + " " + pickedCards.toString());
         }
     });
-    console.log(cardIndexesPicked.toString());
     gapi.hangout.data.setValue('masterCardsPicked', masterCardsPicked.toString());
 }
 
 function drawAnswers(eventData) {
-    if (eventData.playerID == user.id) {
+    /*if (eventData.playerID == user.id) {
         console.log("drawing cards:"+eventData.cardsDrawn.toString());
-    }
+    }*/
 
     //loop through cards drawn by everyone
     for (var i=0;i<eventData.cardsDrawn.length;i++) {
@@ -494,6 +493,14 @@ function revealCards() {
     //instructions to reader
     gapi.hangout.layout.displayNotice("Click a card to reveal it as you read it.");
 
+    //shuffle answers, then sync
+   /* var parent = $("#sharedArea-body");
+    var divs = $('.answerContainer');
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+    console.log($('.answerContainer').toString());*/
+
     //show reader all the cards
     $('.answer').each(function () {
         //get card text
@@ -588,8 +595,7 @@ function winnerPicked(eventData) {
         //center window and make it bigger
         readerVideoWindow.center(); readerVideoWindow.setSize(500,300);
         if (user.id == eventData.playerID) {
-            console.log("Pancakes should go here!");
-            var pancakes = gapi.hangout.av.effects.createImageResource('https://tabletopforge.com/CAH/img/winner_pancake.png');
+            var pancakes = gapi.hangout.av.effects.createImageResource('https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/winner_pancake.png');
             overlay = pancakes.showFaceTrackingOverlay({
                 'trackingFeature': gapi.hangout.av.effects.FaceTrackingFeature.NOSE_ROOT,
                 'scaleWithFace': true,
@@ -624,6 +630,7 @@ function winnerPicked(eventData) {
 function advanceReader() {
     //try and catch new/left players
     updateParticipantsList();
+    readerIndex = playerStore.find('id',reader.id,0,false,false,true);
     if (user.id == reader.id) {
         if (readerIndex < numPlayers-1) {
             readerIndex++;

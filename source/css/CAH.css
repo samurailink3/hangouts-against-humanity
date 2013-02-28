@@ -28,7 +28,7 @@
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-image: url(//tabletopforge.com/CAH/img/HAH-32-whtfan.png);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/HAH-32-whtfan.png);
 }
 
 .blackcard {
@@ -38,7 +38,7 @@
     background-size: 25%;
     background-repeat: no-repeat;
     background-position: 5% 100%;
-    background-image: url(//tabletopforge.com/CAH/img/HAH-32-blkfan.png);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/HAH-32-blkfan.png);
 }
 
 .whitecard:hover, .whitecard:active, .whitecard:focus {
@@ -62,15 +62,15 @@
 }
 
 .firstCardSelected {
-    background-image: url(//tabletopforge.com/CAH/img/trans-1.jpg);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/trans-1.jpg);
 }
 
 .secondCardSelected {
-    background-image: url(//tabletopforge.com/CAH/img/trans-2.jpg);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/trans-2.jpg);
 }
 
 .thirdCardSelected {
-    background-image: url(//tabletopforge.com/CAH/img/trans-3.jpg);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/trans-3.jpg);
 }
 
 .answerButton {
@@ -101,7 +101,7 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(//tabletopforge.com/CAH/img/eye.png);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/eye.png);
 }
 
 .answerContainer {
@@ -116,12 +116,12 @@
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-image: url(//tabletopforge.com/CAH/img/pick2.png);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/pick2.png);
 }
 
 .pick3 {
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-image: url(//tabletopforge.com/CAH/img/pick3.png);
+    background-image: url(https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/pick3.png);
 }

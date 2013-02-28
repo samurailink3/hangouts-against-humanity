@@ -3,6 +3,9 @@ participantArray = new Array();
 
 gapi.hangout.onApiReady.add(function (eventObj) {
     if (eventObj.isApiReady) {
+        //hack for Firefox for now
+        Ext.resetElement = Ext.getBody();
+
         warningPrompt();
     }
 });
@@ -28,8 +31,7 @@ function warningPrompt() {
                     //Google API
                     initGoogleAPI();
 
-                    //hack for Firefox for now
-                    Ext.resetElement = Ext.getBody();
+
 
                     //tooltip manager
                     Ext.tip.QuickTipManager.init();
@@ -52,25 +54,35 @@ function warningPrompt() {
                         height:200,
                         autoShow: true,
                         closable: false,
-                        collapsible: false,
+                        collapsible: true,
                         minWidth: 250,
                         resizable: {preserveRatio: 'true'},
                         shadow: false,
                         listeners : {
+                            'collapse': function (){
+                                videoCanvas.setVisible(false);
+                            },
+                            'expand': function (){
+                                videoCanvas.setVisible(true);
+                            },
                             'move' : function(win,x,y,opt){
                                 videoCanvas.setPosition(x+7,y+28);
-                                videoCanvas.setVisible(true);
+                                if (!win.getCollapsed()) {
+                                    videoCanvas.setVisible(true);
+                                }
                             },
                             'resize': function(self, width, height) {
                                 videoCanvas.setWidth(width-19);
-                                videoCanvas.setVisible(true);
+                                if (!self.getCollapsed()) {
+                                    videoCanvas.setVisible(true);
+                                }
                             }
                         }
                     });
                     $('#readerVideoWindow').mousedown(function () {videoCanvas.setVisible(false);});
                     resetVideoWindow();
 
-                    var soundURL = 'https://tabletopforge.com/CAH/img/Winner.wav';
+                    var soundURL = 'https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/Winner.wav';
                     winnerSound = gapi.hangout.av.effects.createAudioResource(soundURL).createSound({loop: false, localOnly: true});
 
                     //check if game starter and if so sync to game state
@@ -152,8 +164,6 @@ function updateParticipantsList() {
     playerStore.each(function (playerRec) {
         found = false;
         for (var i=0; i<participantArray.length;i++) {
-            //console.log(participantArray[i]);
-            //console.log(playerRec);
             if (participantArray[i].id == playerRec.getData().participantID) {
                 found = true;
             }
@@ -169,7 +179,6 @@ function updateParticipantsList() {
     }
 
     Ext.getCmp('playerGrid').store.sort([
-        { property: 'displayIndex',  direction: 'ASC' },
         { property: 'name', direction: 'ASC' }
     ]);
 }

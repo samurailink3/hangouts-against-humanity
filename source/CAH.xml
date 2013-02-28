@@ -25,20 +25,20 @@
         </script>
 
         <!-- jQuery -->
-        <script src="//tabletopforge.com/CAH/js/jquery-1.7.2.min.js"></script>
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/js/jquery-1.7.2.min.js"></script>
 
         <!-- ExtJS -->
-        <script src="//tabletopforge.com/CAH/js/ext-all-debug.js"></script>
-        <link rel="stylesheet" href="//tabletopforge.com/CAH/resources/css/ext-all-gray.css">
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/js/ext-all-debug.js"></script>
+        <link rel="stylesheet" href="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/resources/css/ext-all-gray.css">
 
         <!-- CAH -->
-        <link rel="stylesheet" href="//tabletopforge.com/CAH/css/CAH.css">
-        <script src="//tabletopforge.com/CAH/CAH.hangout.js"></script>
-        <script src="//tabletopforge.com/CAH/data/cards.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.dataStores.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.game.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.layout.js"></script>
-        <script src="//tabletopforge.com/CAH/CAH.js"></script>
+        <link rel="stylesheet" href="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/css/CAH.css">
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/CAH.hangout.js"></script>
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/data/cards.js"></script>
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/CAH.dataStores.js"></script>
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/CAH.game.js"></script>
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/CAH.layout.js"></script>
+        <script src="https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/CAH.js"></script>
 
         <html>
         <head>
