@@ -82,7 +82,7 @@ function warningPrompt() {
                     $('#readerVideoWindow').mousedown(function () {videoCanvas.setVisible(false);});
                     resetVideoWindow();
 
-                    var soundURL = 'https://raw.github.com/samurailink3/hangouts-against-humanity/master/source/img/Winner.wav';
+                    var soundURL = 'http://hangoutsagainsthumanity.com/game/img/Winner.wav';
                     winnerSound = gapi.hangout.av.effects.createAudioResource(soundURL).createSound({loop: false, localOnly: true});
 
                     //check if game starter and if so sync to game state
