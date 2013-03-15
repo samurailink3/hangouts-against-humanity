@@ -44,8 +44,9 @@ function startGame() {
                         { boxLabel: 'Christmas Set', name: 'sets', checked: false, inputValue: 'CAHxmas' },
                         { boxLabel: 'Grognards (fan RPG set)', name: 'sets', checked: false, inputValue: 'CAHgrognards' },
                         { boxLabel: 'Weeaboo (fan Anime set)', name: 'sets', checked: false, inputValue: 'CAHweeaboo' },
-                        { boxLabel: 'NEIndy (fan expansion set)', name: 'sets', checked: false, inputValue: 'NEIndy' }
-
+                        { boxLabel: 'NEIndy (fan expansion set)', name: 'sets', checked: false, inputValue: 'NEIndy' },
+                        { boxLabel: 'Not Safe For Humanity (fan set)', name: 'sets', checked: false, inputValue: 'NSFH'}
+                            
                     ]
                 },
                 {
