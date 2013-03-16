@@ -1039,7 +1039,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1039,"cardType":"A","text":"Accidentally sexting your mom.","numAnswers":0,"expansion":"NEIndy"},
     {"id":1040,"cardType":"A","text":"Tabasco in your pee-hole.","numAnswers":0,"expansion":"NEIndy"},
     {"id":1041,"cardType":"A","text":"Pee Wee Herman.","numAnswers":0,"expansion":"NEIndy"},
-    [{"id":1042,"cardType":"A","text":"A breath of fresh air.","numAnswers":0,"expansion":"NSFH"},
+    {"id":1042,"cardType":"A","text":"A breath of fresh air.","numAnswers":0,"expansion":"NSFH"},
     {"id":1043,"cardType":"A","text":"A great big floppy donkey dick.","numAnswers":0,"expansion":"NSFH"},
     {"id":1044,"cardType":"A","text":"A pyramid scheme.","numAnswers":0,"expansion":"NSFH"},
     {"id":1045,"cardType":"A","text":"A school bus surrounded by cop cars.","numAnswers":0,"expansion":"NSFH"},
