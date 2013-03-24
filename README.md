@@ -7,6 +7,6 @@ The eventual goal of this project is to create a javascript framework for this t
 
 Thanks to Cards Against Humanity for this great CC-BY-NC-SA 2.0 game!
 
-[Buy it on Amazon!](http://www.amazon.com/gp/product/B004S8F7QM/ref=as_li_ss_tl?ie=UTF8&tag=cardagaihuma-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B004S8F7QM) - [Expansion 1!](http://www.amazon.com/Cards-Against-Humanity-First-Expansion/dp/B005JFNE8G) - [Expansion 2!](http://www.amazon.com/Cards-Against-Humanity-Second-Expansion/dp/B008JNPBYK)
+[Buy it on Amazon!](http://www.amazon.com/gp/product/B004S8F7QM/ref=as_li_ss_tl?ie=UTF8&tag=cardagaihuma-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B004S8F7QM) - [Expansion 1!](http://www.amazon.com/Cards-Against-Humanity-First-Expansion/dp/B005JFNE8G) - [Expansion 2!](http://www.amazon.com/Cards-Against-Humanity-Second-Expansion/dp/B008JNPBYK) - [Expansion 3!](http://www.amazon.com/Cards-Against-Humanity-Third-Expansion/dp/B00B3YT030/ref=sr_1_4?ie=UTF8&qid=1364148386&sr=8-4&keywords=cards+against+humanity+expansion+3)
 
 This project is dual-licensed under the [AGPLv3(or any later version)](http://www.gnu.org/licenses/agpl-3.0.html) and [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US).
