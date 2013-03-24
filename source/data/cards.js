@@ -1156,7 +1156,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1156,"cardType":"Q","text":"David Icke's newest conspiracy theory states that _ caused _.","numAnswers":2,"expansion":"NSFH"},
     {"id":1157,"cardType":"Q","text":"I did _ so you don't have to!","numAnswers":1,"expansion":"NSFH"},
     {"id":1158,"cardType":"Q","text":"I need your clothes, your bike, and _.","numAnswers":1,"expansion":"NSFH"},
-    {"id":1159,"cardType":"Q","text":"In a new Cold War retro movie, the red menace tries to conquer the world through the cunning use of ____________.","numAnswers":1,"expansion":"NSFH"},
+    {"id":1159,"cardType":"Q","text":"In a new Cold War retro movie, the red menace tries to conquer the world through the cunning use of _.","numAnswers":1,"expansion":"NSFH"},
     {"id":1160,"cardType":"Q","text":"In college, our lecturer made us write a report comparing _ to _.","numAnswers":2,"expansion":"NSFH"},
     {"id":1161,"cardType":"Q","text":"In The Hangover part 3, those four guys have to deal with _, _, and _.","numAnswers":3,"expansion":"NSFH"},
     {"id":1162,"cardType":"Q","text":"My zombie survival kit includes food, water, and _.","numAnswers":1,"expansion":"NSFH"},
