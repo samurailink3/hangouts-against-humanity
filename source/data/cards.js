@@ -1259,7 +1259,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1259,"cardType":"Q","text":"Turns out that _-Man was neither the hero we needed nor wanted.","numAnswers":1,"expansion":"CAHe3"},
     {"id":1260,"cardType":"Q","text":"As part of his daily regimen, Anderson Cooper sets aside 15 minutes for _.","numAnswers":1,"expansion":"CAHe3"},
     {"id":1261,"cardType":"Q","text":"Money can't buy me love, but it can buy me _.","numAnswers":1,"expansion":"CAHe3"},
-    {"id":1262,"cardType":"Q","text":"With enough time and pressure, _ will turn into _.","numAnswers":1,"expansion":"CAHe3"},
+    {"id":1262,"cardType":"Q","text":"With enough time and pressure, _ will turn into _.","numAnswers":2,"expansion":"CAHe3"},
     {"id":1263,"cardType":"Q","text":"And what did you bring for show and tell?","numAnswers":1,"expansion":"CAHe3"},
     {"id":1264,"cardType":"Q","text":"During high school, I never really fit in until I found _ club.","numAnswers":1,"expansion":"CAHe3"},
     {"id":1265,"cardType":"Q","text":"Hey, baby, come back to my place and I'll show you _.","numAnswers":1,"expansion":"CAHe3"},
