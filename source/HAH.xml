@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <ModulePrefs title="Hangouts Against Humanity">
+        <Require feature="rpc"/>
+        <Require feature="views"/>
+    </ModulePrefs>
+    <Content type="html">
+        <![CDATA[
+        <!-- Hangout API -->
+        <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.3"></script>
+
+        <!-- Analytics API -->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36364793-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+
+         <!-- CAH -->
+        <link rel="stylesheet" href="https://someURL.com/css/HAH.css">
+        <script src="https://someURL.com/HAH.hangout.js"></script>
+        <script src="https://someURL.com/HAH.js"></script>
+
+        <html>
+        <head>
+            <title>Hangouts Against Humanity</title>
+            <meta http-equiv="Content-Type" content="text/html;	charset = iso - 8859 - 1 "/>
+        </head>
+        <body>
+
+        </body>
+        </html>
+        ]]>
+    </Content>
+</Module>
