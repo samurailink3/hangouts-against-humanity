@@ -25,18 +25,21 @@
         </script>
 
          <!-- CAH -->
-        <link rel="stylesheet" href="https://someURL.com/css/HAH.css">
-        <script src="https://someURL.com/HAH.hangout.js"></script>
-        <script src="https://someURL.com/HAH.js"></script>
+        <link rel="stylesheet" href="//hangoutsagainsthumanity.net/source/css/HAH.css">
+        <script src="//hangoutsagainsthumanity.net/source/HAH.hangout.js"></script>
+        <script src="//hangoutsagainsthumanity.net/source/HAH.js"></script>
 
-        <html>
+        <html xmlns:ng="http://angularjs.org">
         <head>
             <title>Hangouts Against Humanity</title>
             <meta http-equiv="Content-Type" content="text/html;	charset = iso - 8859 - 1 "/>
         </head>
-        <body>
 
+        <body>
+            Hello {{'World'}}!
         </body>
+
+        <script src="http://code.angularjs.org/angular.js"></script>
         </html>
         ]]>
     </Content>
