@@ -1030,7 +1030,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1030,"cardType":"A","text":"Black Santa.","numAnswers":0,"expansion":"NEIndy"},
     {"id":1031,"cardType":"Q","text":"I'm cuckoo for _ puffs.","numAnswers":1,"expansion":"NEIndy"},
     {"id":1032,"cardType":"Q","text":"Silly rabbit, _ are for kids.","numAnswers":1,"expansion":"NEIndy"},
-    {"id":1033,"cardType":"A","text":"Jesus Christ(our lord and saviour.)","numAnswers":0,"expansion":"NEIndy"},
+    {"id":1033,"cardType":"A","text":"Jesus Christ (our lord and saviour).","numAnswers":0,"expansion":"NEIndy"},
     {"id":1034,"cardType":"A","text":"Farting with your armpits.","numAnswers":0,"expansion":"NEIndy"},
     {"id":1035,"cardType":"A","text":"Poopsicles.","numAnswers":0,"expansion":"NEIndy"},
     {"id":1036,"cardType":"A","text":"Slaughtering innocent children.","numAnswers":0,"expansion":"NEIndy"},
