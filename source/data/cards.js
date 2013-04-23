@@ -1142,7 +1142,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1142,"cardType":"Q","text":"Instead of chess, the Grim Reaper now gambles for your soul with a game of _.","numAnswers":1,"expansion":"NSFH"},
     {"id":1143,"cardType":"Q","text":"My father gave his life fighting to protect _ from _.","numAnswers":2,"expansion":"NSFH"},
     {"id":1144,"cardType":"Q","text":"Why is my throat sore?","numAnswers":1,"expansion":"NSFH"},
-    {"id":1145,"cardType":"Q","text":"_ sparked a city-wide riot the only ended with _.","numAnswers":2,"expansion":"NSFH"},
+    {"id":1145,"cardType":"Q","text":"_ sparked a city-wide riot that only ended with _.","numAnswers":2,"expansion":"NSFH"},
     {"id":1146,"cardType":"Q","text":"I’m very sorry Mrs. Smith, but Little Billy has tested positive for _.","numAnswers":1,"expansion":"NSFH"},
     {"id":1147,"cardType":"Q","text":"Instead of beating them, Chris Brown now does _ to women.","numAnswers":1,"expansion":"NSFH"},
     {"id":1148,"cardType":"Q","text":"Instead of cutting, trendy young emo girls now engage in _.","numAnswers":1,"expansion":"NSFH"},
