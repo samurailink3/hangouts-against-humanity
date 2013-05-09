@@ -1,11 +1,34 @@
-
-function UserCtrl($scope) {
+/*function UserCtrl($scope) {
     var participantID = gapi.hangout.getParticipantId();
-    $scope.name = gapi.hangout.getParticipantById(participantID).person.displayName;
-    $scope.id = gapi.hangout.getParticipantById(participantID).person.id;
-    $scope.imageURL = gapi.hangout.getParticipantById(participantID).person.image.url;
+    $scope.userName = gapi.hangout.getParticipantById(participantID).person.displayName;
+    $scope.userID = gapi.hangout.getParticipantById(participantID).person.id;
+    $scope.userImageURL = gapi.hangout.getParticipantById(participantID).person.image.url;
 }
 
+function HangoutCtrl($scope,$http) {
+    var hangoutID = gapi.hangout.getHangoutId();
+    $scope.hangoutID = gapi.hangout.getHangoutId();
+
+    //save the HangoutID
+    var thisHangout = {};
+    thisHangout.test = 'West Wing rocks!';
+
+    $http.post('https://hangouts-against-humanity.herokuapp.com/hangout/'+hangoutID,thisHangout).success(function (resp) {
+            console.log(resp);
+        }
+    )
+}*/
+
+//After Hangout API is ready
+gapi.hangout.onApiReady.add(function (eventObj) {
+    if (eventObj.isApiReady) {
+        //manually bootstrap angular
+        angular.bootstrap(document.body, ['hahApp']);
+
+        //start listening to events
+        gapi.hangout.data.onStateChanged.add(onStateChanged);
+    }
+});
 
 //send event name and string version of JSON object to shared state
 function sendEvent(eventName, eventData) {

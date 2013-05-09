@@ -26,8 +26,6 @@
 
          <!-- HAH -->
         <link rel="stylesheet" href="//www.hangoutsagainsthumanity.net/source/css/HAH.css">
-        <script src="//www.hangoutsagainsthumanity.net/source/HAH.hangout.js"></script>
-        <script src="//www.hangoutsagainsthumanity.net/source/HAH.js"></script>
 
         <html xmlns:ng="http://angularjs.org">
         <head>
@@ -35,11 +33,21 @@
             <meta http-equiv="Content-Type" content="text/html;	charset = iso - 8859 - 1 "/>
         </head>
 
-        <body ng-controller="UserCtrl">
-            Hello {{name}}!
+        <body ng-controller="GameCtrl">
+            <div class="HandArea">
+                <ul>
+                    <li ng-repeat="card in cards.cards">
+                        {{$index + 1}}
+                        {{card.text}}
+                    </li>
+                </ul>
+            </div>
         </body>
 
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"></script>
+        <script src="//www.hangoutsagainsthumanity.net/source/HAH.hangout.js"></script>
+        <script src="//www.hangoutsagainsthumanity.net/source/HAH.js"></script>
         </html>
         ]]>
     </Content>
