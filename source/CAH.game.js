@@ -47,8 +47,8 @@ function startGame() {
                         { boxLabel: 'Weeaboo (fan Anime set)', name: 'sets', checked: false, inputValue: 'CAHweeaboo' },
                         { boxLabel: 'NEIndy (fan expansion set)', name: 'sets', checked: false, inputValue: 'NEIndy' },
                         { boxLabel: 'Not Safe For Humanity (fan set)', name: 'sets', checked: false, inputValue: 'NSFH'},
-                        { boxLabel: 'Joey Image 1 (fan set)', name: 'sets', checked: false, inputValue: 'Image1'}
-                            
+                        { boxLabel: 'Joey Image 1 (fan set)', name: 'sets', checked: false, inputValue: 'Image1'},
+    		{ boxLabel: 'Game of Thrones - no spoilers (fan set)', name: 'sets', checked: false, inputValue: 'GOT'}
                     ]
                 },
                 {
