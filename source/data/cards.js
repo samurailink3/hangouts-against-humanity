@@ -1319,105 +1319,105 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1319,"cardType":"A","text":"Lightsaber Dildos","numAnswers":0,"expansion":"Image1"},
     {"id":1320,"cardType":"Q","text":"Baskin Robbins just added a 32nd flavor: _!","numAnswers":1,"expansion": "Image1"},
     {"id":1321,"cardType":"Q","text":"I can drive and ____ at the same time.","numAnswers":1,"expansion": "Image1"},
-    {"id":1322,"cardType":"Q","text":"_ ain't nothin' to fuck wit'!","numAnswers":1,"expansion": "Image1"}
-    {"id":1322,"cardType":"A","text":"Jaime Lannister, 'The Kingslayer'","numAnswers":0,"expansion":"GOT"}
-    {"id":1323,"cardType":"A","text":"Cersei Lannister, the Queen","numAnswers":0,"expansion":"GOT"}
-    {"id":1324,"cardType":"A","text":"Joffrey Baratheon, the Prince","numAnswers":0,"expansion":"GOT"}
-    {"id":1325,"cardType":"A","text":"Tyrion Lannister, 'The Imp'","numAnswers":0,"expansion":"GOT"}
-    {"id":1326,"cardType":"A","text":"Ned Stark, Lord of Winterfell, Warden of the North","numAnswers":0,"expansion":"GOT"}
-    {"id":1327,"cardType":"A","text":"Robb Stark, heir apparent of Winterfell","numAnswers":0,"expansion":"GOT"}
-    {"id":1328,"cardType":"A","text":"Jon Snow, the bastard","numAnswers":0,"expansion":"GOT"}
-    {"id":1329,"cardType":"A","text":"Catelyn Stark, Lady of Winterfell","numAnswers":0,"expansion":"GOT"}
-    {"id":1330,"cardType":"A","text":"Sansa Stark, betrothed to Prince Joffrey","numAnswers":0,"expansion":"GOT"}
-    {"id":1331,"cardType":"A","text":"Arya Stark","numAnswers":0,"expansion":"GOT"}
-    {"id":1332,"cardType":"A","text":"Bran Stark","numAnswers":0,"expansion":"GOT"}
-    {"id":1333,"cardType":"A","text":"Hodor","numAnswers":0,"expansion":"GOT"}
-    {"id":1334,"cardType":"A","text":"The Wall","numAnswers":0,"expansion":"GOT"}
-    {"id":1335,"cardType":"A","text":"The Night's Watch","numAnswers":0,"expansion":"GOT"}
-    {"id":1336,"cardType":"A","text":"Danerys Targaryen, Khaleesi of the Dothraki","numAnswers":0,"expansion":"GOT"}
-    {"id":1337,"cardType":"A","text":"Theon Greyjoy, Ned Stark's youthful ward","numAnswers":0,"expansion":"GOT"}
-    {"id":1338,"cardType":"A","text":"Peter 'Littlefinger' Baelish","numAnswers":0,"expansion":"GOT"}
-    {"id":1339,"cardType":"A","text":"Lord Varys, the Spider","numAnswers":0,"expansion":"GOT"}
-    {"id":1340,"cardType":"A","text":"King Robert Baratheon, First of His Name, King of the Andals and the First Men, Lord Protector of the Realm","numAnswers":0,"expansion":"GOT"}
-    {"id":1341,"cardType":"A","text":"Khal Drogo, Dothraki horse lord","numAnswers":0,"expansion":"GOT"}
-    {"id":1342,"cardType":"A","text":"The Iron Throne","numAnswers":0,"expansion":"GOT"}
-    {"id":1343,"cardType":"A","text":"HODOR!!","numAnswers":0,"expansion":"GOT"}
-    {"id":1344,"cardType":"A","text":"Ros, the red-headed whore","numAnswers":0,"expansion":"GOT"}
-    {"id":1345,"cardType":"A","text":"Winterfell","numAnswers":0,"expansion":"GOT"}
-    {"id":1346,"cardType":"A","text":"Kings's Landing","numAnswers":0,"expansion":"GOT"}
-    {"id":1347,"cardType":"A","text":"The North","numAnswers":0,"expansion":"GOT"}
-    {"id":1348,"cardType":"A","text":"Beyond the Wall","numAnswers":0,"expansion":"GOT"}
-    {"id":1349,"cardType":"A","text":"Westeros","numAnswers":0,"expansion":"GOT"}
-    {"id":1350,"cardType":"A","text":"The Seven Kingdoms","numAnswers":0,"expansion":"GOT"}
-    {"id":1351,"cardType":"A","text":"Direwolves","numAnswers":0,"expansion":"GOT"}
-    {"id":1352,"cardType":"A","text":"White Walkers","numAnswers":0,"expansion":"GOT"}
-    {"id":1353,"cardType":"A","text":"Dragons","numAnswers":0,"expansion":"GOT"}
-    {"id":1354,"cardType":"A","text":"'Winter is Coming'","numAnswers":0,"expansion":"GOT"}
-    {"id":1355,"cardType":"A","text":"The old gods and the new","numAnswers":0,"expansion":"GOT"}
-    {"id":1356,"cardType":"A","text":"Incest, hot twin on twin action","numAnswers":0,"expansion":"GOT"}
-    {"id":1357,"cardType":"A","text":"House Stark","numAnswers":0,"expansion":"GOT"}
-    {"id":1358,"cardType":"A","text":"House Lannister","numAnswers":0,"expansion":"GOT"}
-    {"id":1359,"cardType":"A","text":"House Targaryen","numAnswers":0,"expansion":"GOT"}
-    {"id":1360,"cardType":"A","text":"George R. R. Martin","numAnswers":0,"expansion":"GOT"}
-    {"id":1361,"cardType":"A","text":"Gratuitous nudity, the way only HBO® can provide","numAnswers":0,"expansion":"GOT"}
-    {"id":1362,"cardType":"A","text":"Throwing a boy out of a window to cover up incest","numAnswers":0,"expansion":"GOT"}
-    {"id":1363,"cardType":"A","text":"Joining the Night's Watch","numAnswers":0,"expansion":"GOT"}
-    {"id":1364,"cardType":"A","text":"Selling your sister to Dothraki nomads","numAnswers":0,"expansion":"GOT"}
-    {"id":1365,"cardType":"A","text":"Making your husband love you through cunning use of reverse cowgirl","numAnswers":0,"expansion":"GOT"}
-    {"id":1366,"cardType":"A","text":"Running a whorehouse, which is better than owning ships","numAnswers":0,"expansion":"GOT"}
-    {"id":1367,"cardType":"A","text":"Conquering the continent with dragons","numAnswers":0,"expansion":"GOT"}
-    {"id":1368,"cardType":"A","text":"Being forced to marry an abusive king","numAnswers":0,"expansion":"GOT"}
-    {"id":1369,"cardType":"A","text":"Beheading a man for having no honor","numAnswers":0,"expansion":"GOT"}
-    {"id":1370,"cardType":"A","text":"Explaining complicated plot with lots of naked women around","numAnswers":0,"expansion":"GOT"}
-    {"id":1371,"cardType":"A","text":"Trusting Littlefinger","numAnswers":0,"expansion":"GOT"}
-    {"id":1372,"cardType":"A","text":"Learning the prince is a bastard and the product of incest","numAnswers":0,"expansion":"GOT"}
-    {"id":1373,"cardType":"A","text":"Slapping Joffrey. Repeatedly.","numAnswers":0,"expansion":"GOT"}
-    {"id":1374,"cardType":"A","text":"Cutting off your enemies' heads and mounting them on spikes","numAnswers":0,"expansion":"GOT"}
-    {"id":1375,"cardType":"A","text":"Raising your husband's bastard son as your own","numAnswers":0,"expansion":"GOT"}
-    {"id":1376,"cardType":"A","text":"Asking a teenage girl if she's 'bled yet'","numAnswers":0,"expansion":"GOT"}
-    {"id":1377,"cardType":"A","text":"Making millions of fans cry by killing off beloved characters","numAnswers":0,"expansion":"GOT"}
-    {"id":1378,"cardType":"A","text":"Hodoring","numAnswers":0,"expansion":"GOT"}
-    {"id":1379,"cardType":"A","text":"Riding off to join your best friend's rebellion","numAnswers":0,"expansion":"GOT"}
-    {"id":1380,"cardType":"A","text":"Breastfeeding your creepy son until he's 9 years old","numAnswers":0,"expansion":"GOT"}
-    {"id":1381,"cardType":"A","text":"Having a giant wolf for a pet","numAnswers":0,"expansion":"GOT"}
-    {"id":1382,"cardType":"A","text":"Beheaded on the steps of the Sept of Baelor","numAnswers":0,"expansion":"GOT"}
-    {"id":1383,"cardType":"A","text":"Killed by a member of the Kingsguard","numAnswers":0,"expansion":"GOT"}
-    {"id":1384,"cardType":"A","text":"Seized the Iron Throne by any means necessary","numAnswers":0,"expansion":"GOT"}
-    {"id":1385,"cardType":"A","text":"Built a 700 foot high wall to keep out bad things","numAnswers":0,"expansion":"GOT"}
-    {"id":1386,"cardType":"A","text":"Born a bastard","numAnswers":0,"expansion":"GOT"}
-    {"id":1387,"cardType":"A","text":"Butchered by White Walkers and arranged in an artful pattern","numAnswers":0,"expansion":"GOT"}
-    {"id":1388,"cardType":"A","text":"Appointed as Hand of the King","numAnswers":0,"expansion":"GOT"}
-    {"id":1389,"cardType":"A","text":"Found enough wolf cubs for all the children","numAnswers":0,"expansion":"GOT"}
-    {"id":1390,"cardType":"A","text":"Fondled by your brother on your wedding day","numAnswers":0,"expansion":"GOT"}
-    {"id":1391,"cardType":"A","text":"Climbed the wrong wall at the wrong time","numAnswers":0,"expansion":"GOT"}
-    {"id":1392,"cardType":"A","text":"Started a pointless vendetta with another House","numAnswers":0,"expansion":"GOT"}
-    {"id":1393,"cardType":"A","text":"Increased ratings with the use of gratuitous nudity","numAnswers":0,"expansion":"GOT"}
-    {"id":1394,"cardType":"A","text":"Carried by Hodor","numAnswers":0,"expansion":"GOT"}
-    {"id":1395,"cardType":"A","text":"Pissed off of the Wall just because","numAnswers":0,"expansion":"GOT"}
-    {"id":1396,"cardType":"A","text":"Swore an oath to the old gods and the new","numAnswers":0,"expansion":"GOT"}
-    {"id":1397,"cardType":"A","text":"Brought home a new baby bastard for your wife to hate","numAnswers":0,"expansion":"GOT"}
-    {"id":1398,"cardType":"A","text":"Negotiated a wedding no one will like","numAnswers":0,"expansion":"GOT"}
-    {"id":1399,"cardType":"A","text":"Rode a dragon, like a boss","numAnswers":0,"expansion":"GOT"}
-    {"id":1400,"cardType":"A","text":"Changed things from the book, infuriating fans","numAnswers":0,"expansion":"GOT"}
-    {"id":1401,"cardType":"A","text":"Spent an entire reign chasing boars and fucking whores","numAnswers":0,"expansion":"GOT"}
-    {"id":1402,"cardType":"Q","text":"If Ned Stark had _, he never would have _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1403,"cardType":"Q","text":"Brace yourselves, _ is coming.","numAnswers":1,"expansion":"GOT"}
-    {"id":1404,"cardType":"Q","text":"In exchange for his sister, Viserys was given _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1405,"cardType":"Q","text":"Despite his best efforts, King Robert filled his reign with _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1406,"cardType":"Q","text":"_ was proclaimed the true king of the Seven Kingdoms.","numAnswers":1,"expansion":"GOT"}
-    {"id":1407,"cardType":"Q","text":"In the Game of Thrones, you win or you _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1408,"cardType":"Q","text":"Because of _, Danerys was called _ by everyone.","numAnswers":1,"expansion":"GOT"}
-    {"id":1409,"cardType":"Q","text":"I will take what is mine with _ and _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1410,"cardType":"Q","text":"There is no word for _ in Dothraki.","numAnswers":1,"expansion":"GOT"}
-    {"id":1411,"cardType":"Q","text":"In the next Game of Thrones book, George R. R. Martin said _ will _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1412,"cardType":"Q","text":"All hail _! King of _!","numAnswers":1,"expansion":"GOT"}
-    {"id":1413,"cardType":"Q","text":"A Lannister always pays _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1414,"cardType":"Q","text":"First lesson, stick them with _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1415,"cardType":"Q","text":"In the name of _, first of his _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1416,"cardType":"Q","text":"The things I do for _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1417,"cardType":"Q","text":"Hodor only ever says _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1418,"cardType":"Q","text":"The next Game of Thrones book will be titled _ of _.","numAnswers":1,"expansion":"GOT"}
-    {"id":1419,"cardType":"Q","text":"A Dothraki wedding without _ is considered a dull affair.","numAnswers":1,"expansion":"GOT"}
-    {"id":1420,"cardType":"Q","text":"After I was caught _, I was forced to join the Night's Watch.","numAnswers":1,"expansion":"GOT"}
+    {"id":1322,"cardType":"Q","text":"_ ain't nothin' to fuck wit'!","numAnswers":1,"expansion": "Image1"},
+    {"id":1322,"cardType":"A","text":"Jaime Lannister, 'The Kingslayer'","numAnswers":0,"expansion":"GOT"},
+    {"id":1323,"cardType":"A","text":"Cersei Lannister, the Queen","numAnswers":0,"expansion":"GOT"},
+    {"id":1324,"cardType":"A","text":"Joffrey Baratheon, the Prince","numAnswers":0,"expansion":"GOT"},
+    {"id":1325,"cardType":"A","text":"Tyrion Lannister, 'The Imp'","numAnswers":0,"expansion":"GOT"},
+    {"id":1326,"cardType":"A","text":"Ned Stark, Lord of Winterfell, Warden of the North","numAnswers":0,"expansion":"GOT"},
+    {"id":1327,"cardType":"A","text":"Robb Stark, heir apparent of Winterfell","numAnswers":0,"expansion":"GOT"},
+    {"id":1328,"cardType":"A","text":"Jon Snow, the bastard","numAnswers":0,"expansion":"GOT"},
+    {"id":1329,"cardType":"A","text":"Catelyn Stark, Lady of Winterfell","numAnswers":0,"expansion":"GOT"},
+    {"id":1330,"cardType":"A","text":"Sansa Stark, betrothed to Prince Joffrey","numAnswers":0,"expansion":"GOT"},
+    {"id":1331,"cardType":"A","text":"Arya Stark","numAnswers":0,"expansion":"GOT"},
+    {"id":1332,"cardType":"A","text":"Bran Stark","numAnswers":0,"expansion":"GOT"},
+    {"id":1333,"cardType":"A","text":"Hodor","numAnswers":0,"expansion":"GOT"},
+    {"id":1334,"cardType":"A","text":"The Wall","numAnswers":0,"expansion":"GOT"},
+    {"id":1335,"cardType":"A","text":"The Night's Watch","numAnswers":0,"expansion":"GOT"},
+    {"id":1336,"cardType":"A","text":"Danerys Targaryen, Khaleesi of the Dothraki","numAnswers":0,"expansion":"GOT"},
+    {"id":1337,"cardType":"A","text":"Theon Greyjoy, Ned Stark's youthful ward","numAnswers":0,"expansion":"GOT"},
+    {"id":1338,"cardType":"A","text":"Peter 'Littlefinger' Baelish","numAnswers":0,"expansion":"GOT"},
+    {"id":1339,"cardType":"A","text":"Lord Varys, the Spider","numAnswers":0,"expansion":"GOT"},
+    {"id":1340,"cardType":"A","text":"King Robert Baratheon, First of His Name, King of the Andals and the First Men, Lord Protector of the Realm","numAnswers":0,"expansion":"GOT"},
+    {"id":1341,"cardType":"A","text":"Khal Drogo, Dothraki horse lord","numAnswers":0,"expansion":"GOT"},
+    {"id":1342,"cardType":"A","text":"The Iron Throne","numAnswers":0,"expansion":"GOT"},
+    {"id":1343,"cardType":"A","text":"HODOR!!","numAnswers":0,"expansion":"GOT"},
+    {"id":1344,"cardType":"A","text":"Ros, the red-headed whore","numAnswers":0,"expansion":"GOT"},
+    {"id":1345,"cardType":"A","text":"Winterfell","numAnswers":0,"expansion":"GOT"},
+    {"id":1346,"cardType":"A","text":"Kings's Landing","numAnswers":0,"expansion":"GOT"},
+    {"id":1347,"cardType":"A","text":"The North","numAnswers":0,"expansion":"GOT"},
+    {"id":1348,"cardType":"A","text":"Beyond the Wall","numAnswers":0,"expansion":"GOT"},
+    {"id":1349,"cardType":"A","text":"Westeros","numAnswers":0,"expansion":"GOT"},
+    {"id":1350,"cardType":"A","text":"The Seven Kingdoms","numAnswers":0,"expansion":"GOT"},
+    {"id":1351,"cardType":"A","text":"Direwolves","numAnswers":0,"expansion":"GOT"},
+    {"id":1352,"cardType":"A","text":"White Walkers","numAnswers":0,"expansion":"GOT"},
+    {"id":1353,"cardType":"A","text":"Dragons","numAnswers":0,"expansion":"GOT"},
+    {"id":1354,"cardType":"A","text":"'Winter is Coming'","numAnswers":0,"expansion":"GOT"},
+    {"id":1355,"cardType":"A","text":"The old gods and the new","numAnswers":0,"expansion":"GOT"},
+    {"id":1356,"cardType":"A","text":"Incest, hot twin on twin action","numAnswers":0,"expansion":"GOT"},
+    {"id":1357,"cardType":"A","text":"House Stark","numAnswers":0,"expansion":"GOT"},
+    {"id":1358,"cardType":"A","text":"House Lannister","numAnswers":0,"expansion":"GOT"},
+    {"id":1359,"cardType":"A","text":"House Targaryen","numAnswers":0,"expansion":"GOT"},
+    {"id":1360,"cardType":"A","text":"George R. R. Martin","numAnswers":0,"expansion":"GOT"},
+    {"id":1361,"cardType":"A","text":"Gratuitous nudity, the way only HBO® can provide","numAnswers":0,"expansion":"GOT"},
+    {"id":1362,"cardType":"A","text":"Throwing a boy out of a window to cover up incest","numAnswers":0,"expansion":"GOT"},
+    {"id":1363,"cardType":"A","text":"Joining the Night's Watch","numAnswers":0,"expansion":"GOT"},
+    {"id":1364,"cardType":"A","text":"Selling your sister to Dothraki nomads","numAnswers":0,"expansion":"GOT"},
+    {"id":1365,"cardType":"A","text":"Making your husband love you through cunning use of reverse cowgirl","numAnswers":0,"expansion":"GOT"},
+    {"id":1366,"cardType":"A","text":"Running a whorehouse, which is better than owning ships","numAnswers":0,"expansion":"GOT"},
+    {"id":1367,"cardType":"A","text":"Conquering the continent with dragons","numAnswers":0,"expansion":"GOT"},
+    {"id":1368,"cardType":"A","text":"Being forced to marry an abusive king","numAnswers":0,"expansion":"GOT"},
+    {"id":1369,"cardType":"A","text":"Beheading a man for having no honor","numAnswers":0,"expansion":"GOT"},
+    {"id":1370,"cardType":"A","text":"Explaining complicated plot with lots of naked women around","numAnswers":0,"expansion":"GOT"},
+    {"id":1371,"cardType":"A","text":"Trusting Littlefinger","numAnswers":0,"expansion":"GOT"},
+    {"id":1372,"cardType":"A","text":"Learning the prince is a bastard and the product of incest","numAnswers":0,"expansion":"GOT"},
+    {"id":1373,"cardType":"A","text":"Slapping Joffrey. Repeatedly.","numAnswers":0,"expansion":"GOT"},
+    {"id":1374,"cardType":"A","text":"Cutting off your enemies' heads and mounting them on spikes","numAnswers":0,"expansion":"GOT"},
+    {"id":1375,"cardType":"A","text":"Raising your husband's bastard son as your own","numAnswers":0,"expansion":"GOT"},
+    {"id":1376,"cardType":"A","text":"Asking a teenage girl if she's 'bled yet'","numAnswers":0,"expansion":"GOT"},
+    {"id":1377,"cardType":"A","text":"Making millions of fans cry by killing off beloved characters","numAnswers":0,"expansion":"GOT"},
+    {"id":1378,"cardType":"A","text":"Hodoring","numAnswers":0,"expansion":"GOT"},
+    {"id":1379,"cardType":"A","text":"Riding off to join your best friend's rebellion","numAnswers":0,"expansion":"GOT"},
+    {"id":1380,"cardType":"A","text":"Breastfeeding your creepy son until he's 9 years old","numAnswers":0,"expansion":"GOT"},
+    {"id":1381,"cardType":"A","text":"Having a giant wolf for a pet","numAnswers":0,"expansion":"GOT"},
+    {"id":1382,"cardType":"A","text":"Beheaded on the steps of the Sept of Baelor","numAnswers":0,"expansion":"GOT"},
+    {"id":1383,"cardType":"A","text":"Killed by a member of the Kingsguard","numAnswers":0,"expansion":"GOT"},
+    {"id":1384,"cardType":"A","text":"Seized the Iron Throne by any means necessary","numAnswers":0,"expansion":"GOT"},
+    {"id":1385,"cardType":"A","text":"Built a 700 foot high wall to keep out bad things","numAnswers":0,"expansion":"GOT"},
+    {"id":1386,"cardType":"A","text":"Born a bastard","numAnswers":0,"expansion":"GOT"},
+    {"id":1387,"cardType":"A","text":"Butchered by White Walkers and arranged in an artful pattern","numAnswers":0,"expansion":"GOT"},
+    {"id":1388,"cardType":"A","text":"Appointed as Hand of the King","numAnswers":0,"expansion":"GOT"},
+    {"id":1389,"cardType":"A","text":"Found enough wolf cubs for all the children","numAnswers":0,"expansion":"GOT"},
+    {"id":1390,"cardType":"A","text":"Fondled by your brother on your wedding day","numAnswers":0,"expansion":"GOT"},
+    {"id":1391,"cardType":"A","text":"Climbed the wrong wall at the wrong time","numAnswers":0,"expansion":"GOT"},
+    {"id":1392,"cardType":"A","text":"Started a pointless vendetta with another House","numAnswers":0,"expansion":"GOT"},
+    {"id":1393,"cardType":"A","text":"Increased ratings with the use of gratuitous nudity","numAnswers":0,"expansion":"GOT"},
+    {"id":1394,"cardType":"A","text":"Carried by Hodor","numAnswers":0,"expansion":"GOT"},
+    {"id":1395,"cardType":"A","text":"Pissed off of the Wall just because","numAnswers":0,"expansion":"GOT"},
+    {"id":1396,"cardType":"A","text":"Swore an oath to the old gods and the new","numAnswers":0,"expansion":"GOT"},
+    {"id":1397,"cardType":"A","text":"Brought home a new baby bastard for your wife to hate","numAnswers":0,"expansion":"GOT"},
+    {"id":1398,"cardType":"A","text":"Negotiated a wedding no one will like","numAnswers":0,"expansion":"GOT"},
+    {"id":1399,"cardType":"A","text":"Rode a dragon, like a boss","numAnswers":0,"expansion":"GOT"},
+    {"id":1400,"cardType":"A","text":"Changed things from the book, infuriating fans","numAnswers":0,"expansion":"GOT"},
+    {"id":1401,"cardType":"A","text":"Spent an entire reign chasing boars and fucking whores","numAnswers":0,"expansion":"GOT"},
+    {"id":1402,"cardType":"Q","text":"If Ned Stark had _, he never would have _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1403,"cardType":"Q","text":"Brace yourselves, _ is coming.","numAnswers":1,"expansion":"GOT"},
+    {"id":1404,"cardType":"Q","text":"In exchange for his sister, Viserys was given _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1405,"cardType":"Q","text":"Despite his best efforts, King Robert filled his reign with _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1406,"cardType":"Q","text":"_ was proclaimed the true king of the Seven Kingdoms.","numAnswers":1,"expansion":"GOT"},
+    {"id":1407,"cardType":"Q","text":"In the Game of Thrones, you win or you _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1408,"cardType":"Q","text":"Because of _, Danerys was called _ by everyone.","numAnswers":1,"expansion":"GOT"},
+    {"id":1409,"cardType":"Q","text":"I will take what is mine with _ and _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1410,"cardType":"Q","text":"There is no word for _ in Dothraki.","numAnswers":1,"expansion":"GOT"},
+    {"id":1411,"cardType":"Q","text":"In the next Game of Thrones book, George R. R. Martin said _ will _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1412,"cardType":"Q","text":"All hail _! King of _!","numAnswers":1,"expansion":"GOT"},
+    {"id":1413,"cardType":"Q","text":"A Lannister always pays _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1414,"cardType":"Q","text":"First lesson, stick them with _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1415,"cardType":"Q","text":"In the name of _, first of his _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1416,"cardType":"Q","text":"The things I do for _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1417,"cardType":"Q","text":"Hodor only ever says _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1418,"cardType":"Q","text":"The next Game of Thrones book will be titled _ of _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1419,"cardType":"Q","text":"A Dothraki wedding without _ is considered a dull affair.","numAnswers":1,"expansion":"GOT"},
+    {"id":1420,"cardType":"Q","text":"After I was caught _, I was forced to join the Night's Watch.","numAnswers":1,"expansion":"GOT"},
     {"id":1421,"cardType":"Q","text":"A man without _ is a man without power.","numAnswers":1,"expansion":"GOT"}
 ]
