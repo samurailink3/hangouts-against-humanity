@@ -1318,7 +1318,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1318,"cardType":"Q","text":"So I was _ in my cubicle at work, and suddenly _!","numAnswers":2,"expansion": "Image1"},
     {"id":1319,"cardType":"A","text":"Lightsaber Dildos","numAnswers":0,"expansion":"Image1"},
     {"id":1320,"cardType":"Q","text":"Baskin Robbins just added a 32nd flavor: _!","numAnswers":1,"expansion": "Image1"},
-    {"id":1321,"cardType":"Q","text":"I can drive and ____ at the same time.","numAnswers":1,"expansion": "Image1"},
+    {"id":1321,"cardType":"Q","text":"I can drive and _ at the same time.","numAnswers":1,"expansion": "Image1"},
     {"id":1322,"cardType":"Q","text":"_ ain't nothin' to fuck wit'!","numAnswers":1,"expansion": "Image1"},
     {"id":1322,"cardType":"A","text":"Jaime Lannister, 'The Kingslayer'","numAnswers":0,"expansion":"GOT"},
     {"id":1323,"cardType":"A","text":"Cersei Lannister, the Queen","numAnswers":0,"expansion":"GOT"},
