@@ -25,8 +25,9 @@ function startGame() {
             autoShow: true,
             modal: true,
             collapsible: false,
-            resizable: false,
+            resizable: true,
             shadow:false,
+            scrollbars: true,
             items: [
                 {
                     xtype: 'checkboxgroup',
