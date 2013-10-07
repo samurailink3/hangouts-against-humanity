@@ -1405,7 +1405,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1404,"cardType":"Q","text":"In exchange for his sister, Viserys was given _.","numAnswers":1,"expansion":"GOT"},
     {"id":1405,"cardType":"Q","text":"Despite his best efforts, King Robert filled his reign with _.","numAnswers":1,"expansion":"GOT"},
     {"id":1406,"cardType":"Q","text":"_ was proclaimed the true king of the Seven Kingdoms.","numAnswers":1,"expansion":"GOT"},
-    {"id":1407,"cardType":"Q","text":"In the Game of Thrones, you win or _.","numAnswers":1,"expansion":"GOT"},
+    {"id":1407,"cardType":"Q","text":"In _, you win or you lose.","numAnswers":1,"expansion":"GOT"},
     {"id":1408,"cardType":"Q","text":"Because of _, Danerys was called _ by everyone.","numAnswers":2,"expansion":"GOT"},
     {"id":1409,"cardType":"Q","text":"I will take what is mine with _ and _.","numAnswers":2,"expansion":"GOT"},
     {"id":1410,"cardType":"Q","text":"There is no word for _ in Dothraki.","numAnswers":1,"expansion":"GOT"},
