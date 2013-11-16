@@ -1850,5 +1850,4 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1850,"cardType":"Q","text":"_ is what keeps us together.","numAnswers":1,"expansion":"HACK"},
     {"id":1851,"cardType":"Q","text":"_ is a better replacement for crypto.","numAnswers":1,"expansion":"HACK"},
     {"id":1852,"cardType":"Q","text":"_ riding a Segway","numAnswers":1,"expansion":"HACK"},
-    {"id":1853,"cardType":"Q","text":"One day, over my fireplace, I'm going to have a massive painting of _. You know, to remind me where I came from.","numAnswers":1,"expansion":"HACK"}
-],
+    {"id":1853,"cardType":"Q","text":"One day, over my fireplace, I'm going to have a massive painting of _. You know, to remind me where I came from.","numAnswers":1,"expansion":"HACK"}]
