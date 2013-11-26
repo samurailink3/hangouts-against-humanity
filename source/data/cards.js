@@ -1949,4 +1949,5 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
 	{"id":1949,"cardType":"Q","text":"What's fun until it gets weird?","numAnswers":1,"expansion":"CAHe4"},
 	{"id":1950,"cardType":"Q","text":"You've seen the bearded lady! You've seen the ring of fire! Now, ladies and gentlemen, feast your eyes upon _!","numAnswers":1,"expansion":"CAHe4"},
 	{"id":1951,"cardType":"Q","text":"_ may pass, but _ will last forever.","numAnswers":2,"expansion":"CAHe4"},
-	{"id":1952,"cardType":"Q","text":"_ will never be the same after _.","numAnswers":2,"expansion":"CAHe4"}]
+	{"id":1952,"cardType":"Q","text":"_ will never be the same after _.","numAnswers":2,"expansion":"CAHe4"},
+	{"id":1953,"cardType":"Q","text":"You guys, I saw this crazy movie last night. It opens on _, and then there's some stuff about _, and then it ends with _.","numAnswers":3,"expansion":"CAHe4"}]
