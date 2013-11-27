@@ -1850,7 +1850,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1850,"cardType":"Q","text":"_ is what keeps us together.","numAnswers":1,"expansion":"HACK"},
     {"id":1851,"cardType":"Q","text":"_ is a better replacement for crypto.","numAnswers":1,"expansion":"HACK"},
     {"id":1852,"cardType":"Q","text":"_ riding a Segway","numAnswers":1,"expansion":"HACK"},
-    {"id":1853,"cardType":"Q","text":"One day, over my fireplace, I'm going to have a massive painting of _. You know, to remind me where I came from.","numAnswers":1,"expansion":"HACK"}
+    {"id":1853,"cardType":"Q","text":"One day, over my fireplace, I'm going to have a massive painting of _. You know, to remind me where I came from.","numAnswers":1,"expansion":"HACK"},
 	{"id":1854,"cardType":"A","text":"10 Incredible Facts About the Anus.","numAnswers":0,"expansion":"CAHe4"},
 	{"id":1855,"cardType":"A","text":"A Native American who solves crimes by going into the spirit world.","numAnswers":0,"expansion":"CAHe4"},
 	{"id":1856,"cardType":"A","text":"A Ugandan warlord.","numAnswers":0,"expansion":"CAHe4"},
@@ -1920,7 +1920,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
 	{"id":1920,"cardType":"A","text":"Unquestioning obedience.","numAnswers":0,"expansion":"CAHe4"},
 	{"id":1921,"cardType":"A","text":"What Jesus would do.","numAnswers":0,"expansion":"CAHe4"},
 	{"id":1922,"cardType":"A","text":"Whatever a McRib® is made of.","numAnswers":0,"expansion":"CAHe4"},
-	{"id":1923,"cardType":"A","text":"Whispering all sexy.","numAnswers":0,"expansion":"CAHe4"}
+	{"id":1923,"cardType":"A","text":"Whispering all sexy.","numAnswers":0,"expansion":"CAHe4"},
 	{"id":1924,"cardType":"Q","text":"2 AM in the city that never sleeps. The door swings open and she walks in, legs up to here. Something in her eyes tells me she's looking for _.","numAnswers":1,"expansion":"CAHe4"},
 	{"id":1925,"cardType":"Q","text":"Adventure. Romance. _. From Paramount Pictures, \"_.\"","numAnswers":2,"expansion":"CAHe4"},
 	{"id":1926,"cardType":"Q","text":"Alright, bros. Our frat house is condemned, and all the hot slampieces are over at Gamma Phi. The time has come to commence Operation _.","numAnswers":1,"expansion":"CAHe4"},
