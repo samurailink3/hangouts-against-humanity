@@ -52,9 +52,10 @@ function startGame() {
                         { boxLabel: 'Not Safe For Humanity (fan set)', name: 'sets', checked: false, inputValue: 'NSFH'},
                         { boxLabel: 'Joey Image 1 (fan set)', name: 'sets', checked: false, inputValue: 'Image1'},
                         { boxLabel: 'Game of Thrones - no spoilers (fan set)', name: 'sets', checked: false, inputValue: 'GOT'},
-                        { boxLabel: 'PAX Prime 2013 Expansion', name: 'sets', checked: false, inputValue: 'PAXP13'},
-                        { boxLabel: 'PAX East 2013 Expansion', name: 'sets', checked: false, inputValue: 'PAXE13'},
-                        { boxLabel: 'Hackers Against Humanity', name: 'sets', checked: false, inputValue: 'HACK'}
+                        { boxLabel: 'PAX Prime 2013 Expansion (special expansion)', name: 'sets', checked: false, inputValue: 'PAXP13'},
+                        { boxLabel: 'PAX East 2013 Expansion (special expansion)', name: 'sets', checked: false, inputValue: 'PAXE13'},
+                        { boxLabel: 'Hackers Against Humanity (fan set)', name: 'sets', checked: false, inputValue: 'HACK'},
+                        { boxLabel: 'Cards Against Gallifrey (fan Doctor Who set)', name: 'sets', checked: false, inputValue: 'Gallifrey'}
                     ]
                 },
                 {
