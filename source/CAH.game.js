@@ -59,14 +59,25 @@ function startGame() {
                     ]
                 },
                 {
-                    id:'winningPoints',
-                    xtype:'numberfield',
-                    fieldLabel:'Points',
-                    labelWidth:40,
-                    width:100,
-                    value:7,
-                    maxValue:20,
-                    minValue:1
+                    id: 'winningPoints',
+                    xtype: 'numberfield',
+                    fieldLabel: 'Points',
+                    labelWidth: 40,
+                    width: 100,
+                    value: 7,
+                    maxValue: 20,
+                    minValue: 1
+                },
+                {
+                    xtype: 'checkboxgroup',
+                    id: 'extraOptionsGroup',
+                    fieldLabel: 'Extra Fun',
+                    vertical: true,
+                    labelWidth: 60,
+                    columns: 1,
+                    items: [
+                        { boxLabel: 'Narcissism Mode', name: 'narcissismMode', checked: false }
+                    ]
                 }
             ],
             buttons: [
@@ -77,6 +88,7 @@ function startGame() {
                             var eventData = new Object();
                             eventData.winningPoints = Ext.getCmp('winningPoints').getValue();
                             eventData.sets = Ext.getCmp('setGroup').getValue();
+                            eventData.extraOptions = Ext.getCmp('extraOptionsGroup').getValue();
                             eventData.gameStarter = user.name;
                             eventData.sender = user.id;
                             sendEvent('startedGame', eventData);
@@ -100,7 +112,7 @@ function startGame() {
     }
 }
 
-function startedGame(eventData){
+function startedGame(eventData) {
     //notification
     gapi.hangout.layout.displayNotice(eventData.gameStarter + " started the game!");
 
@@ -129,7 +141,7 @@ function startedGame(eventData){
     Ext.getCmp('goalDisplay').show();
 
     //initialize decks
-    initDecks(eventData.sets);
+    initDecks(eventData.sets, eventData.extraOptions);
 
     //person who started the game randomly chooses reader,sends out cards
     if (eventData.sender == user.id) {
@@ -233,7 +245,7 @@ function enableReaderHand() {
     Ext.getCmp('handArea').expand();
 }
 
-function initDecks(setsData) {
+function initDecks(setsData, extraOptions) {
     var thisGameCards = new Array();
     for (var i in masterCards) {
         if (setsData.sets == 'Base') {
@@ -246,6 +258,26 @@ function initDecks(setsData) {
                 thisGameCards.push(masterCards[i]);
             }
         }
+    }
+
+    //add player names to the game as answer cards
+    if (extraOptions.narcissismMode) {
+        console.log("Narcissism mode is ON! Adding cards for each player's name.");
+        var index = masterCards.length + 1;
+        playerStore.each(function(playerRec) {
+           var card = {
+               id: index,
+               text: playerRec.getData().name,
+               numAnswers: 0,
+               cardType: 'A'
+           };
+           console.log("Adding white card: " + card.text);
+           thisGameCards.push(card);
+           index += 1;
+        });
+    }
+    else {
+        console.log("Narcissism mode is OFF!");
     }
 
     //master questions store
