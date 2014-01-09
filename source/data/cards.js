@@ -2055,7 +2055,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":2055,"cardType":"Q","text":"After we watch an episode, I've got some _-flavored Jelly Babies to hand out.","numAnswers":1,"expansion":"Gallifrey"},
     {"id":2056,"cardType":"Q","text":"Wibbly-wobbly timey-wimey _.","numAnswers":1,"expansion":"Gallifrey"},
     {"id":2057,"cardType":"Q","text":"What's going to be The Doctor's new catch phrase.","numAnswers":1,"expansion":"Gallifrey"},
-    {"id":2058,"cardType":"Q","text":"Bowtimes are _.","numAnswers":1,"expansion":"Gallifrey"},
+    {"id":2058,"cardType":"Q","text":"Bowties are _.","numAnswers":1,"expansion":"Gallifrey"},
     {"id":2059,"cardType":"Q","text":"The voice chip of one of the Cybermen has malfunctioned. Instead of saying \"DELETE!\", it now says \"_\".","numAnswers":1,"expansion":"Gallifrey"},
     {"id":2060,"cardType":"Q","text":"Old and busted: \"EXTERMINATE!\" New hotness: _.","numAnswers":1,"expansion":"Gallifrey"},
     {"id":2061,"cardType":"Q","text":"There's a new dance on Gallifrey, it's called the _.","numAnswers":1,"expansion":"Gallifrey"},
