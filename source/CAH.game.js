@@ -503,14 +503,16 @@ function submitAnswers(eventData) {
 function revealCards() {
     //instructions to reader
     gapi.hangout.layout.displayNotice("Click a card to reveal it as you read it.");
-
+    
     //shuffle answers, then sync
-   /* var parent = $("#sharedArea-body");
-    var divs = $('.answerContainer');
+    var parent = $("#sharedArea-body");
+    var divs = $(".answerContainer").detach();
+    console.log("Number of answers: " + divs.length);
     while (divs.length) {
+    	console.log("Looping through appending cards to answerContainer");
         parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
     }
-    console.log($('.answerContainer').toString());*/
+    console.log($('.answerContainer').toString());
 
     //show reader all the cards
     $('.answer').each(function () {
