@@ -2621,7 +2621,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
   {"id":2620,"cardType":"A","text":"Sexual fantasies involving Mindy Lahiri and a sumptuous coffeecake","numAnswers":0,"expansion":"Ladies Against Humanity"},
   {"id":2621,"cardType":"A","text":"Tweeting Cory Booker about that guy walking behind you","numAnswers":0,"expansion":"Ladies Against Humanity"},
   {"id":2622,"cardType":"A","text":"A gender neutral, owl-themed baby announcement","numAnswers":0,"expansion":"Ladies Against Humanity"},
-  {"id":2623,"cardType":"Q","text":"Why can't we have nice things?","numAnswers":0,"expansion":"Ladies Against Humanity"},
+  {"id":2623,"cardType":"Q","text":"Why can't we have nice things?","numAnswers":1,"expansion":"Ladies Against Humanity"},
   {"id":2624,"cardType":"A","text":"Being the only woman at the office-mandated sexual harassment training","numAnswers":0,"expansion":"Ladies Against Humanity"},
   {"id":2625,"cardType":"A","text":"Asking Larry Summers increasingly difficult mathematical questions until Bar and Mat Mitzvahs are considered equally important","numAnswers":0,"expansion":"Ladies Against Humanity"},
   {"id":2626,"cardType":"A","text":"Cramming Vladimir Putin full of Activia until he poops out Russia's homophobia","numAnswers":0,"expansion":"Ladies Against Humanity"},
