@@ -56,7 +56,8 @@ function startGame() {
                         { boxLabel: 'PAX East 2013 Expansion (special expansion)', name: 'sets', checked: false, inputValue: 'PAXE13'},
                         { boxLabel: 'Hackers Against Humanity (fan set)', name: 'sets', checked: false, inputValue: 'HACK'},
                         { boxLabel: 'Cards Against Gallifrey (fan Doctor Who set)', name: 'sets', checked: false, inputValue: 'Gallifrey'},
-						{ boxLabel: 'Cards Against Alternia (fan Homestuck set)', name: 'sets', checked: false, inputValue: 'Alternia'}
+			{ boxLabel: 'Cards Against Alternia (fan Homestuck set)', name: 'sets', checked: false, inputValue: 'Alternia'},
+			{ boxLabel: 'Ladies Against Humanity', name: 'sets', checked: false, inputValue: 'Ladies Against Humanity'}
                     ]
                 },
                 {
