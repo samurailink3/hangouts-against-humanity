@@ -20,8 +20,8 @@ function startGame() {
         //present game options
         optionsWindow = Ext.create('Ext.window.Window', {
             title:'Game Options', id:'optionsWindow',
-            width:450,
-            height:200,
+            width:500,
+            height:350,
             autoShow: true,
             modal: true,
             collapsible: false,
