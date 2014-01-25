@@ -1926,7 +1926,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
     {"id":1926,"cardType":"Q","text":"Alright, bros. Our frat house is condemned, and all the hot slampieces are over at Gamma Phi. The time has come to commence Operation _.","numAnswers":1,"expansion":"CAHe4"},
     {"id":1927,"cardType":"Q","text":"As king, how will I keep the peasants in line?","numAnswers":1,"expansion":"CAHe4"},
     {"id":1928,"cardType":"Q","text":"Dear Leader Kim Jong-un, our village praises your infinite wisdom with a humble offering of _.","numAnswers":1,"expansion":"CAHe4"},
-    {"id":1929,"cardType":"Q","text":"Do not fuck with my! I am literally _ right now.","numAnswers":1,"expansion":"CAHe4"},
+    {"id":1929,"cardType":"Q","text":"Do not fuck with me! I am literally _ right now.","numAnswers":1,"expansion":"CAHe4"},
     {"id":1930,"cardType":"Q","text":"Every step towards _ gets me a little bit closer to _.","numAnswers":2,"expansion":"CAHe4"},
     {"id":1931,"cardType":"Q","text":"Forget everything you know about _, because now we've supercharged it with _!","numAnswers":2,"expansion":"CAHe4"},
     {"id":1932,"cardType":"Q","text":"Honey, I have a new role-play I want to try tonight! You can be _, and I'll be _.","numAnswers":2,"expansion":"CAHe4"},
