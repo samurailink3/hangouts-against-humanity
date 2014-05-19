@@ -2622,7 +2622,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
   {"id":2622,"cardType":"Q","text":"Why can't we have nice things?","numAnswers":1,"expansion":"Ladies Against Humanity"},
   {"id":2623,"cardType":"A","text":"Being the only woman at the office-mandated sexual harassment training.","numAnswers":0,"expansion":"Ladies Against Humanity"},
   {"id":2624,"cardType":"A","text":"Asking Larry Summers increasingly difficult mathematical questions until Bar and Mat Mitzvahs are considered equally important.","numAnswers":0,"expansion":"Ladies Against Humanity"},
-  {"id":2625,"cardType":"A","text":"Cramming Vladimir Putin full of Activia until he poops out Russia's homophobia.","numAnswers":0,"expansion":"Ladies Against Humanity"}
+  {"id":2625,"cardType":"A","text":"Cramming Vladimir Putin full of Activia until he poops out Russia's homophobia.","numAnswers":0,"expansion":"Ladies Against Humanity"},
   {"id":2626,"cardType":"Q","text":"In an attempt to reach a wider audience, the Royal Ontario Museum has opened an interactive exhibit on _.","numAnswers":1,"expansion":"Canadian Conversion Kit"},
   {"id":2627,"cardType":"Q","text":"What's the Canadian government using to inspire rural students to suceed?","numAnswers":1,"expansion":"Canadian Conversion Kit"},
   {"id":2628,"cardType":"Q","text":"in the next Bob and Doug McKenzie adventure, they have to find _ to uncover a sinister plot involving _ and _.","numAnswers":3,"expansion":"Canadian Conversion Kit"},
@@ -2658,5 +2658,5 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
   {"id":2656,"cardType":"A","text":"Killing a moose with your bare hands.","numAnswers":0,"expansion":"Canadian Conversion Kit"},
   {"id":2657,"cardType":"A","text":"tim Hortons.","numAnswers":0,"expansion":"Canadian Conversion Kit"},
   {"id":2658,"cardType":"A","text":"Quintland.","numAnswers":0,"expansion":"Canadian Conversion Kit"},
-  {"id":2659,"cardType":"A","text":"Karla Momolka.","numAnswers":0,"expansion":"Canadian Conversion Kit"},
+  {"id":2659,"cardType":"A","text":"Karla Momolka.","numAnswers":0,"expansion":"Canadian Conversion Kit"}
 ]
