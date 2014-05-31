@@ -21,7 +21,7 @@ function warningPrompt() {
         collapsible: false,
         resizable: false,
         shadow: false,
-        html: 'Hangouts Against Humanity is a Google+ Hangout app designed for playing <a href="http://www.cardsagainsthumanity.com/index2.html" target="_blank">Cards Against Humanity</a>. Please be aware this game is intended for mature audiences. <br><br> Hangouts Against Humanity is available on Github where you can view the source, wiki, and submit issues <a href="https://github.com/samurailink3/hangouts-against-humanity" target="_blank">here</a> ',
+        html: 'Hangouts Against Humanity is a Google+ Hangogned for playing <a href="http://www.cardsagainsthumanity.com/index2.html" target="_blank">Cards Against Humanity</a>. Please be aware this game is intended for mature audiences. <br><br> Hangouts Against Humanity is available on Github where you can view the source, wiki, and submit issues <a href="https://github.com/samurailink3/hangouts-against-humanity" target="_blank">here</a> ',
         buttons: [
             {
                 text: 'I am a Horrible Person',
