@@ -2691,6 +2691,6 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
   {"id":2689,"cardType":"A","text":"Professor Pinkertoot's Bosom Wax","numAnswers":0,"expansion":"Nobilis Reed"},
   {"id":2690,"cardType":"A","text":"Genderfuckery.","numAnswers":0,"expansion":"Nobilis Reed"},
   {"id":2691,"cardType":"A","text":"Zero gravity sex.","numAnswers":0,"expansion":"Nobilis Reed"},
-  {"id":2692,"cardType":"A","text":"Badly translated Latin.","numAnswers":0,"expansion":"Nobilis Reed"}
+  {"id":2692,"cardType":"A","text":"Badly translated Latin.","numAnswers":0,"expansion":"Nobilis Reed"},
   {"id":2693,"cardType":"A","text":"Detachable Boobs.","numAnswers":0,"expansion":"Nobilis Reed"}
 ]
