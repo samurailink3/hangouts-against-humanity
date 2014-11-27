@@ -7,7 +7,7 @@
     <Content type="html">
         <![CDATA[
         <!-- Hangout API -->
-        <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.3"></script>
+        <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
 
         <!-- Analytics API -->
         <script type="text/javascript">
