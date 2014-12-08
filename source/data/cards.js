@@ -2832,7 +2832,7 @@ masterCards = [{"id":1,"cardType":"A","text":"Flying sex snakes.","numAnswers":0
   {"id":2832,"cardType":"Q","text":"WHOOO! God damn I love _!","numAnswers":1,"expansion":"CAHe5"},
   {"id":2833,"cardType":"Q","text":"Do you lack energy? Does it sometimes feel like the whole world is _? Zoloft.&reg;","numAnswers":1,"expansion":"CAHe5"},
   {"id":2834,"cardType":"Q","text":"Hi, this is Jim from accounting. We noticed a $1,200 charge labeled \”_.\” Can you explain?","numAnswers":1,"expansion":"CAHe5"},
-  {"id":2835,"cardType":"Q","text":"Well if _ is good enough for _, it\'s good enough for me.","numAnswers":1,"expansion":"CAHe5"},
+  {"id":2835,"cardType":"Q","text":"Well if _ is good enough for _, it\'s good enough for me.","numAnswers":2,"expansion":"CAHe5"},
   {"id":2836,"cardType":"Q","text":"Yo\' mama so fat she _!","numAnswers":1,"expansion":"CAHe5"},
   {"id":2837,"cardType":"Q","text":"What killed my boner?","numAnswers":1,"expansion":"CAHe5"},
   {"id":2838,"cardType":"Q","text":"Don\'t forget! Beginning this week, Casual Friday will officially become \”_ Friday.\”","numAnswers":1,"expansion":"CAHe5"},
