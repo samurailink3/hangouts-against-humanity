@@ -44,6 +44,8 @@ function startGame() {
                         { boxLabel: 'Second Expansion', name: 'sets', checked: true, inputValue: 'CAHe2' },
                         { boxLabel: 'Third Expansion', name: 'sets', checked: true, inputValue: 'CAHe3' },
                         { boxLabel: 'Fourth Expansion', name: 'sets', checked: true, inputValue: 'CAHe4'},
+                        { boxLabel: 'Fifth Expansion', name: 'sets', checked: true, inputValue: 'CAHe5'},
+                        { boxLabel: 'Sixth Expansion', name: 'sets', checked: true, inputValue: 'CAHe6'},
                         { boxLabel: 'Box Expansion', name: 'sets', checked: true, inputValue: 'Box'},
                         { boxLabel: 'Christmas Set', name: 'sets', checked: false, inputValue: 'CAHxmas' },
                         { boxLabel: 'Grognards (fan RPG set)', name: 'sets', checked: false, inputValue: 'CAHgrognards' },
@@ -56,10 +58,10 @@ function startGame() {
                         { boxLabel: 'PAX East 2013 Expansion (special expansion)', name: 'sets', checked: false, inputValue: 'PAXE13'},
                         { boxLabel: 'Hackers Against Humanity (fan set)', name: 'sets', checked: false, inputValue: 'HACK'},
                         { boxLabel: 'Cards Against Gallifrey (fan Doctor Who set)', name: 'sets', checked: false, inputValue: 'Gallifrey'},
-			{ boxLabel: 'Cards Against Alternia (fan Homestuck set)', name: 'sets', checked: false, inputValue: 'Alternia'},
-			{ boxLabel: 'Ladies Against Humanity', name: 'sets', checked: false, inputValue: 'Ladies Against Humanity'},
-			{ boxLabel: 'Canadian Conversion Kit', name: 'sets', checked: false, inputValue: 'Canadian Conversion Kit'},
-			{ boxLabel: 'Nobilis Reed', name: 'sets', checked: false, inputValue: 'Nobilis Reed'}
+                  			{ boxLabel: 'Cards Against Alternia (fan Homestuck set)', name: 'sets', checked: false, inputValue: 'Alternia'},
+                  			{ boxLabel: 'Ladies Against Humanity', name: 'sets', checked: false, inputValue: 'Ladies Against Humanity'},
+                  			{ boxLabel: 'Canadian Conversion Kit', name: 'sets', checked: false, inputValue: 'Canadian Conversion Kit'},
+                  			{ boxLabel: 'Nobilis Reed', name: 'sets', checked: false, inputValue: 'Nobilis Reed'}
                     ]
                 },
                 {
@@ -539,7 +541,7 @@ function submitAnswers(eventData) {
 function revealCards() {
     //instructions to reader
     gapi.hangout.layout.displayNotice("Click a card to reveal it as you read it.");
-    
+
     //shuffle answers, then sync
     var parent = $("#sharedArea-body");
     var divs = $(".answerContainer").detach();
